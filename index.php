@@ -1,213 +1,61 @@
-<!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
-  <head>
-    <title>Herber</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="cssload-container"><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-    <div class="page">
-      <!-- Page Header-->
-      <header class="section page-header">
-        <!-- RD Navbar-->
-        <div class="rd-navbar-wrap rd-navbar-modern-wrap">
-          <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="70px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!-- RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                  <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a title="Ir para Página Inicial" class="brand" href="index.html"><img src="images/logo-default-196x47.png" alt="" width="196" height="47"/></a></div>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
-                    <!-- RD Navbar Basket-->
-                    <div class="rd-navbar-basket-wrap">
-                      <button class="rd-navbar-basket fl-bigmug-line-shopping198" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
-                      <div class="cart-inline">
-                        <div class="cart-inline-header">
-                          <h5 class="cart-inline-title">Carrinho:<span> 2</span> Produtos</h5>
-                          <h6 class="cart-inline-title">Valor total:<span> $800</span></h6>
-                        </div>
-                        <div class="cart-inline-body">
-                          <div class="cart-inline-item">
-                            <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="images/product-mini-1-108x100.png" alt="" width="108" height="100"/></a></div>
-                              <div class="unit-body">
-                                <h6 class="cart-inline-name"><a href="#">Nome Produto</a></h6>
-                                <div>
-                                  <div class="group-xs group-inline-middle">
-                                    <div class="table-cart-stepper">
-                                      <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                    </div>
-                                    <h6 class="cart-inline-title">$550</h6>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="cart-inline-item">
-                            <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="images/product-mini-2-108x100.png" alt="" width="108" height="100"/></a></div>
-                              <div class="unit-body">
-                                <h6 class="cart-inline-name"><a href="#">Nome Produto</a></h6>
-                                <div>
-                                  <div class="group-xs group-inline-middle">
-                                    <div class="table-cart-stepper">
-                                      <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                    </div>
-                                    <h6 class="cart-inline-title">$250</h6>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-inline-footer">
-                          <div class="group-sm"><a class="button button-md button-default-outline-2 button-wapasha" href="#">Ver Pedido</a><a class="button button-md button-primary button-pipaluk" href="#">Pagamentos</a></div>
-                        </div>
-                      </div>
-                    </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping198" href="#"><span>2</span></a>
-                    <!-- RD Navbar Search-->
-                    <div class="rd-navbar-search">
-                      <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                      <form class="rd-search" action="#">
-                        <div class="form-wrap">
-                          <label class="form-label" for="rd-navbar-search-form-input">Procurar...</label>
-                          <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="search">
-                          <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- RD Navbar Nav-->
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="sobre.php">Sobre</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="login.php">Login</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contatos.php">Contatos</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="rd-navbar-project-hamburger" data-multitoggle=".rd-navbar-main" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate>
-                    <div class="project-hamburger"><span class="project-hamburger-arrow-top"></span><span class="project-hamburger-arrow-center"></span><span class="project-hamburger-arrow-bottom"></span></div>
-                    <div class="project-hamburger-2"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
-                    </div>
-                    <div class="project-close"><span></span><span></span></div>
-                  </div>
-                </div>
-                <div class="rd-navbar-project rd-navbar-modern-project">
-                  <div class="rd-navbar-project-modern-header">
-                    <h4 class="rd-navbar-project-modern-title">Contate-nos</h4>
-                    <div class="rd-navbar-project-hamburger" data-multitoggle=".rd-navbar-main" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate>
-                      <div class="project-close"><span></span><span></span></div>
-                    </div>
-                  </div>
-                  <div class="rd-navbar-project-content rd-navbar-modern-project-content">
-                    <div>
-                      <p>Siga-nos em nossas redes sociais e fique por dentro das promoções, participe para ganhar prêmios e grandes descontos!!</p>
-                      <div class="heading-6 subtitle">Siga-nos</div>
-                      
-                      
-                      <ul class="rd-navbar-modern-contacts">
-                        <li>
-                          <div class="unit unit-spacing-sm">
-                            <div class="unit-left"><span class="icon fab fa-whatsapp"></span></div>
-                            <div class="unit-body"><a target="_blank" title="Ir para o Whatsapp" class="link-phone" href="http://api.whatsapp.com/send?1=pt_BR&phone=5514998988662">14 99898-8662</a></div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="unit unit-spacing-sm">
-                            <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                            <div class="unit-body"><a class="link-location" href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="unit unit-spacing-sm">
-                            <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
-                            <div class="unit-body"><a class="link-email" href="mailto:#">mail@demolink.org</a></div>
-                          </div>
-                        </li>
-                      </ul>
-                      <ul class="list-inline rd-navbar-modern-list-social">
-                        <li><a class="icon fa fa-facebook" href="#"></a></li>
-                        <li><a class="icon fa fa-twitter" href="#"></a></li>
-                        <li><a class="icon fa fa-google-plus" href="#"></a></li>
-                        <li><a class="icon fa fa-instagram" href="#"></a></li>
-                        <li><a class="icon fa fa-pinterest" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- Swiper-->
+<?php include_once("cabecalho.php"); ?>
+
       <section class="section swiper-container swiper-slider swiper-slider-modern" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="true" data-slide-effect="fade">
         <div class="swiper-wrapper text-left">
-          <div class="swiper-slide context-dark" data-slide-bg="images/slider-1-1920x729.jpg">
+          <div class="swiper-slide context-dark" data-slide-bg="images/01.jpg">
             <div class="swiper-slide-caption">
               <div class="container">
                 <div class="row justify-content-center justify-content-xxl-start">
                   <div class="col-md-10 col-xxl-6">
                     <div class="slider-modern-box">
-                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Organic Food</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Herber provides local citizens and guests of our town with quality organic fruits, vegetables, and other products.</p>
-                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Read more</a></div>
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Lanches</span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Lanches com Hamburger Artesanal. Peça agora! Entrega rápida e comida deliciosa!</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Veja Mais</a></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-slide context-dark" data-slide-bg="images/slider-2-1920x729.jpg">
+          <div class="swiper-slide context-dark" data-slide-bg="images/04.jpg">
             <div class="swiper-slide-caption">
               <div class="container">
                 <div class="row justify-content-center justify-content-xxl-start">
                   <div class="col-md-10 col-xxl-6">
                     <div class="slider-modern-box">
-                      <h1 class="slider-modern-title"><span data-caption-animate="slideInLeft" data-caption-delay="0">Quality Control</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">We control the process of farming at Herber to deliver the best organic products to our customers throughout the state.</p>
-                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Read more</a></div>
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Pizzas</span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Pizzas de vários sabores e com a borda recheada! Peça agora! Entrega rápida e comida deliciosa!</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Veja Mais</a></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="images/slider-3-1920x729.jpg">
+          <div class="swiper-slide context-dark" data-slide-bg="images/02.jpg">
             <div class="swiper-slide-caption">
               <div class="container">
                 <div class="row justify-content-center justify-content-xxl-start">
                   <div class="col-md-10 col-xxl-6">
                     <div class="slider-modern-box">
-                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Eco-Friendly</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">As the leading organic farm, we maintain an eco-friendly policy of growing and selling healthy food without any additives.</p>
-                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInUp" data-caption-delay="400">Read more</a></div>
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInLeft" data-caption-delay="0">Porções e Iscas</span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Porções e Iscas fritas na hora! Peça agora! Entrega rápida e comida deliciosa!</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Veja Mais</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" data-slide-bg="images/03.jpg">
+            <div class="swiper-slide-caption">
+              <div class="container">
+                <div class="row justify-content-center justify-content-xxl-start">
+                  <div class="col-md-10 col-xxl-6">
+                    <div class="slider-modern-box">
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Refrigerantes e Sucos Naturais</span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Sucos 100% Naturais, com frutas frescas e batidas na hora! Refrigerantes lata e litro geladíssimos! Peça agora! Entrega rápida e comida deliciosa!</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInUp" data-caption-delay="400">Veja Mais</a></div>
                     </div>
                   </div>
                 </div>
@@ -230,10 +78,10 @@
               <article class="box-icon-ruby">
                 <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
                   <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-leaf"></div>
+                    <div class="box-icon-ruby-icon linearicons-dinner"></div>
                   </div>
                   <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">Natural &amp; Organic</a></h4>
+                    <h4 class="box-icon-ruby-title"><a href="#">Lanches</a></h4>
                   </div>
                 </div>
               </article>
@@ -242,10 +90,10 @@
               <article class="box-icon-ruby">
                 <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
                   <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-shovel"></div>
+                    <div class="box-icon-ruby-icon linearicons-pie-chart"></div>
                   </div>
                   <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">Best Equipment</a></h4>
+                    <h4 class="box-icon-ruby-title"><a href="#">Massas e Pizzas</a></h4>
                   </div>
                 </div>
               </article>
@@ -254,10 +102,10 @@
               <article class="box-icon-ruby">
                 <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
                   <div class="unit-left">
-                    <div class="box-icon-ruby-icon linearicons-sun"></div>
+                    <div class="box-icon-ruby-icon linearicons-coffee-cup"></div>
                   </div>
                   <div class="unit-body">
-                    <h4 class="box-icon-ruby-title"><a href="#">Dedicated Team</a></h4>
+                    <h4 class="box-icon-ruby-title"><a href="#">Porções e Bebidas</a></h4>
                   </div>
                 </div>
               </article>
