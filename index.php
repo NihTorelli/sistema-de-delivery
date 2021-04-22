@@ -119,13 +119,8 @@
         <div class="container">
           <div class="row row-40 justify-content-center">
             <div class="col-sm-8 col-md-7 col-lg-6 wow fadeInLeft" data-wow-delay="0s">
-              <div class="product-banner"><img src="images/home-banner-1-570x715.jpg" alt="" width="570" height="715"/>
-                <div class="product-banner-content">
-                  <div class="product-banner-inner" style="background-image: url(images/bg-brush.png)">
-                    <h3 class="text-secondary-1">organic</h3>
-                    <h2 class="text-primary">Vegetables</h2>
-                  </div>
-                </div>
+              <div class="product-banner"><img src="images/banner/Banner Pizza.jpg" alt="" width="570" height="715"/>
+                
               </div>
             </div>
             <div class="col-md-5 col-lg-6">
@@ -219,55 +214,17 @@
 
       <!-- Section CTA 2-->
       <section class="section text-center">
-        <div class="parallax-container" data-parallax-img="images/bg-parallax-1.jpg">
-          <div class="parallax-content section-xl section-inset-custom-1 context-dark bg-overlay-40">
+        <div class="parallax-container" data-parallax-img="images/promocao.jpg">
+          <div class="parallax-content section-xl section-inset-custom-1 bg-overlay-40">
             <div class="container">
-              <h2 class="oh font-weight-normal"><span class="d-inline-block wow slideInDown" data-wow-delay="0s">Our Approach</span></h2>
-              <p class="oh big text-width-large"><span class="d-inline-block wow slideInUp" data-wow-delay=".2s">Our farm strictly combines the traditions of organic farming with the latest innovations to make our products healthy and safe for the clients.</span></p><a class="button button-primary button-icon button-icon-left button-ujarak wow fadeInUp" href="https://www.youtube.com/watch?v=-AhmuMqZB0s" data-lightgallery="item" data-wow-delay=".1s"><span class="icon mdi mdi-play"></span>View presentation</a>
+              <h2 class="oh font-weight-normal"><span class="d-inline-block wow slideInDown" data-wow-delay="0s">Promoções</span></h2>
+              <p class="oh big text-width-large"><span class="d-inline-block wow slideInUp" data-wow-delay=".2s">Toda semana temos um combo com valor promocional para você! Peça agora sem sair de casa!!</span></p><a class="button button-primary button-icon button-icon-left button-ujarak wow fadeInUp" href="https://www.youtube.com/watch?v=-AhmuMqZB0s" data-lightgallery="item" data-wow-delay=".1s"><span class="icon mdi mdi-play"></span>Ver Promoções</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Team of professionals-->
-      <section class="section section-md bg-default">
-        <div class="container">
-          <div class="oh">
-            <h2 class="wow slideInUp" data-wow-delay="0s">Our Team</h2>
-          </div>
-          <div class="row row-30 justify-content-center">
-            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay="0s">
-              <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="images/team-1-370x406.jpg" alt="" width="370" height="406"/></a>
-                <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Ryan Wilson</a></h5>
-                  <p class="team-classic-status">Founder</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay=".1s">
-              <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="images/team-2-370x406.jpg" alt="" width="370" height="406"/></a>
-                <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Jill Peterson</a></h5>
-                  <p class="team-classic-status">Garden Manager</p>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInRight" data-wow-delay=".2s">
-              <!-- Team Classic-->
-              <article class="team-classic"><a class="team-classic-figure" href="#"><img src="images/team-3-370x406.jpg" alt="" width="370" height="406"/></a>
-                <div class="team-classic-caption">
-                  <h5 class="team-classic-name"><a href="#">Sam Robinson</a></h5>
-                  <p class="team-classic-status">Farmyard Coordinator</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About us-->
+      
       <section class="section">
         <div class="parallax-container" data-parallax-img="images/bg-parallax-2.jpg">
           <div class="parallax-content section-xl context-dark bg-overlay-68">
@@ -277,28 +234,28 @@
                   <div class="counter-creative">
                     <div class="counter-creative-number"><span class="counter">12</span><span class="icon counter-creative-icon fl-bigmug-line-trophy55"></span>
                     </div>
-                    <h6 class="counter-creative-title">Awards</h6>
+                    <h6 class="counter-creative-title">Premiações</h6>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".1s">
                   <div class="counter-creative">
                     <div class="counter-creative-number"><span class="counter">2</span><span class="symbol">k</span><span class="icon counter-creative-icon fl-bigmug-line-up104"></span>
                     </div>
-                    <h6 class="counter-creative-title">Products</h6>
+                    <h6 class="counter-creative-title">Produtos</h6>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".2s">
                   <div class="counter-creative">
                     <div class="counter-creative-number"><span class="counter">679</span><span class="icon counter-creative-icon fl-bigmug-line-sun81"></span>
                     </div>
-                    <h6 class="counter-creative-title">Happy Clients</h6>
+                    <h6 class="counter-creative-title">Clientes Satisfeitos</h6>
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".3s">
                   <div class="counter-creative">
                     <div class="counter-creative-number"><span class="counter">13</span><span class="icon counter-creative-icon fl-bigmug-line-user143"></span>
                     </div>
-                    <h6 class="counter-creative-title">Farmers</h6>
+                    <h6 class="counter-creative-title">Lojas</h6>
                   </div>
                 </div>
               </div>
@@ -311,17 +268,17 @@
       <section class="section section-md bg-default section-top-image">
         <div class="container">
           <div class="oh h2-title">
-            <h2 class="wow slideInUp" data-wow-delay="0s">Our Gallery</h2>
+            <h2 class="wow slideInUp" data-wow-delay="0s">Alguns Produtos</h2>
           </div>
           <div class="row row-30" data-lightgallery="group">
             <div class="col-sm-6 col-lg-4">
               <div class="oh-desktop">
                 <!-- Thumbnail Classic-->
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-1-370x303.jpg" alt="" width="370" height="303"/>
+                  <div class="thumbnail-mary-figure"><img src="images/galeria/01-tumb.jpg" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-1-1200x800.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Watermelons</a></h4>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria/01.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">X-Bacon Salada</a></h4>
                   </div>
                 </article>
               </div>
@@ -330,10 +287,10 @@
               <div class="oh-desktop">
                 <!-- Thumbnail Classic-->
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-2-370x303.jpg" alt="" width="370" height="303"/>
+                  <div class="thumbnail-mary-figure"><img src="images/galeria/02-tumb.jpg" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-2-1200x800.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Grapes</a></h4>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria/02.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">X-Salada</a></h4>
                   </div>
                 </article>
               </div>
@@ -342,10 +299,10 @@
               <div class="oh-desktop">
                 <!-- Thumbnail Classic-->
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInRight" data-wow-delay=".0s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-3-370x303.jpg" alt="" width="370" height="303"/>
+                  <div class="thumbnail-mary-figure"><img src="images/galeria/03-tumb.jpg" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-3-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Mandarin Oranges</a></h4>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria/03.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Drinks</a></h4>
                   </div>
                 </article>
               </div>
@@ -354,10 +311,10 @@
               <div class="oh-desktop">
                 <!-- Thumbnail Classic-->
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-4-370x303.jpg" alt="" width="370" height="303"/>
+                  <div class="thumbnail-mary-figure"><img src="images/galeria/04-tumb.jpg" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-4-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Lemons</a></h4>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria/04.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Açaí</a></h4>
                   </div>
                 </article>
               </div>
@@ -366,10 +323,10 @@
               <div class="oh-desktop">
                 <!-- Thumbnail Classic-->
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-5-370x303.jpg" alt="" width="370" height="303"/>
+                  <div class="thumbnail-mary-figure"><img src="images/galeria/05-tumb.jpg" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-5-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Organic Food</a></h4>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria/05.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Pizza de Calabresa</a></h4>
                   </div>
                 </article>
               </div>
@@ -378,10 +335,10 @@
               <div class="oh-desktop">
                 <!-- Thumbnail Classic-->
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInDown" data-wow-delay=".1s">
-                  <div class="thumbnail-mary-figure"><img src="images/grid-gallery-6-370x303.jpg" alt="" width="370" height="303"/>
+                  <div class="thumbnail-mary-figure"><img src="images/galeria/06-tumb.jpg" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-6-1200x800.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-370x303.jpg" alt="" width="370" height="303"/></a>
-                    <h4 class="thumbnail-mary-title"><a href="#">Salad</a></h4>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria/06.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Vinho Tinto</a></h4>
                   </div>
                 </article>
               </div>
