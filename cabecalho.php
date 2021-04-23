@@ -157,7 +157,7 @@
                         <li><a target="_blank" title="Ir para nossa página no Facebook" class="icon fa fa-facebook" href="https://www.facebook.com/nicolas.torelli.7503/"></a></li>
                         <li><a target="_blank" title="Ir para nossa página no Twitter" class="icon fa fa-twitter" href="https://twitter.com/nih_torelli"></a></li>                        
                         <li><a target="_blank" title="Ir para nossa página no Instagram"class="icon fa fa-instagram" href="https://www.instagram.com/torellinicolas/"></a></li>
-                        <li><a target="_blank" title="Ir para nossa página no Pinterest"class="icon fa fa-pinterest" href="#"></a></li>
+                        <li><a target="_blank" title="Ir para nossa página no Pinterest"class="icon fa fa-pinterest" href="https://br.pinterest.com/"></a></li>
                         
                       </ul>
                     </div>
