@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="pt-br">
   <head>
     <title>Delivery Torelli</title>
     <meta name="format-detection" content="telephone=no">
@@ -9,7 +9,7 @@
     <meta name="author" content="Nicolas Torelli">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon-nova.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -40,7 +40,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a title="Ir para Página Inicial" class="brand" href="index.html"><img src="images/logo-default-196x47.png" alt="" width="196" height="47"/></a></div>
+                  <div class="rd-navbar-brand"><a title="Ir para Página Inicial" class="brand" href="index.php"><img src="images/logo-default-196x47.png" alt="" width="196" height="47"/></a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -108,7 +108,7 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="sobre.php">Sobre</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="login.php">Login</a>
+                      <li class="rd-nav-item"><a target="_blank" class="rd-nav-link" href="login.php">Login</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contatos.php">Contatos</a>
                       </li>

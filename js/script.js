@@ -352,19 +352,19 @@
 			var regularConstraintsMessages = [
 				{
 					type: regula.Constraint.Required,
-					newMessage: "The text field is required."
+					newMessage: "Campo obrigatório."
 				},
 				{
 					type: regula.Constraint.Email,
-					newMessage: "The email is not a valid email."
+					newMessage: "O e-mail inserido não é um e-mail válido."
 				},
 				{
 					type: regula.Constraint.Numeric,
-					newMessage: "Only numbers are required"
+					newMessage: "Somente números."
 				},
 				{
 					type: regula.Constraint.Selected,
-					newMessage: "Please choose an option."
+					newMessage: "Escolha uma opção."
 				}
 			];
 
@@ -923,13 +923,13 @@
 		if (plugins.rdMailForm.length) {
 			var i, j, k,
 				msg = {
-					'MF000': 'Successfully sent!',
-					'MF001': 'Recipients are not set!',
-					'MF002': 'Form will not work locally!',
-					'MF003': 'Please, define email field in your form!',
-					'MF004': 'Please, define type of your form!',
-					'MF254': 'Something went wrong with PHPMailer!',
-					'MF255': 'Aw, snap! Something went wrong.'
+					'MF000': 'Enviado com sucesso!',
+					'MF001': 'Destinatário não definido!',
+					'MF002': 'Esse formulário não funcionará localmente!',
+					'MF003': 'Por favor, defina o email no formulário!',
+					'MF004': 'Erro ao enviar!',
+					'MF254': 'Erro ao enviar!',
+					'MF255': 'Não é possível enviar email de um servidor local!'
 				};
 
 			for (i = 0; i < plugins.rdMailForm.length; i++) {
@@ -997,7 +997,7 @@
 							form.addClass('form-in-process');
 
 							if (output.hasClass("snackbars")) {
-								output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
+								output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Enviando</span></p>');
 								output.addClass("active");
 							}
 						} else {

@@ -19,46 +19,48 @@
                 <!-- Tab panes-->
                 <div class="tab-content">
                   <div class="tab-pane fade show active" id="tabs-4-1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <p>Um ambiente de trabalho limpo, além de favorecer a saúde e necessidades fisiológicas dos indivíduos (a base da pirâmide de Maslow), também beneficia o desenvolvimento, a conduta e a alta performance da empresa, visto que, ao trabalhar em um local que promove bem-estar, os colaboradores se sentem motivados e exercem suas funções de forma eficaz. Além disso, a limpeza do espaço também previne acidentes e garante a manutenção dos equipamentos da organização.</p>
+                    <p>A arrumação, limpeza e higiene da empresa traz vantagens tanto para a mesma, como para seus profissionais. Entenda:</p>
                     <div class="text-center text-sm-left offset-top-30">
                       <ul class="row-16 list-0 list-custom list-marked list-marked-sm list-marked-secondary">
-                        <li>Eiusmod tempor</li>
-                        <li>Dolore magna</li>
-                        <li>Minim veniam</li>
-                        <li>Nostrud exercitation</li>
-                        <li>Laboris nisi</li>
-                        <li>Officia deserunt</li>
+                        <li>Favorece a qualidade de vida e saúde do quadro de colaboradores;</li>
+                        <li>Aproveita de forma eficaz o local de trabalho;</li>
+                        <li>Gera credibilidade para a empresa entre os profissionais, clientes e o mercado como um todo;</li>
+                        <li>Promove o relacionamento interpessoal entre os colaboradores;</li>
+                        <li>Propicia a conservação dos equipamentos e materiais utilizados na organização;</li>
+                        <li>Facilita a localização dos equipamentos e materiais;</li>
                       </ul>
                     </div>
                     <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Veja Mais</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
                   </div>
-                  <div class="tab-pane fade" id="tabs-4-2">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <div class="tab-pane fade" id="tabs-4-2">                    
                     <div class="text-center text-sm-left offset-top-30">
                       <ul class="row-16 list-0 list-custom list-marked list-marked-sm list-marked-secondary">
-                        <li>Nostrud exercitation</li>
-                        <li>Laboris nisi</li>
-                        <li>Officia deserunt</li>
-                        <li>Eiusmod tempor</li>
-                        <li>Dolore magna</li>
-                        <li>Minim veniam</li>
+                        <li>Inovação</li>
+                        <li>Liderança</li>
+                        <li>Responsabilidade</li>
+                        <li>Integridade</li>
+                        <li>Paixão</li>
+                        <li>Colaboração</li>
+                        <li>Diversidade</li>
+                        <li>Qualidade</li>
+                        <li>Humildade</li>
                       </ul>
                     </div>
-                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Read more</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contact-us.html">Contact us</a></div>
+                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Veja Mais</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
                   </div>
                   <div class="tab-pane fade" id="tabs-4-3">
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>Qualidade significa oferecer a nossos clientes produtos inovadores que satisfaçam plenamente as suas exigências.</p>
                     <div class="text-center text-sm-left offset-top-30">
                       <ul class="row-16 list-0 list-custom list-marked list-marked-sm list-marked-secondary">
-                        <li>Minim veniam</li>
-                        <li>Nostrud exercitation</li>
-                        <li>Eiusmod tempor</li>
-                        <li>Dolore magna</li>
-                        <li>Laboris nisi</li>
-                        <li>Officia deserunt</li>
+                        <li>Qualidade</li>
+                        <li>Excelência</li>
+                        <li>Rapidez</li>
+                        <li>Efetividade</li>
+                        <li>Organização</li>                        
                       </ul>
                     </div>
-                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Read more</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contact-us.html">Contact us</a></div>
+                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Veja Mais</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
                   </div>
                 </div>
               </div>
@@ -70,7 +72,7 @@
 
       <!-- What people say-->
       <section class="section context-dark">
-        <div class="parallax-container" data-parallax-img="images/bg-parallax-2.jpg">
+        <div class="parallax-container" data-parallax-img="images/bg-clientes.jpg">
           <div class="parallax-content section-md bg-overlay-2-21">
             <div class="container">
               <div class="oh">
@@ -82,30 +84,30 @@
                 <article class="quote-lisa">
                   <div class="quote-lisa-body"><a class="quote-lisa-figure" href="#"><img class="img-circles" src="images/nicolas.jpg" alt="" width="100" height="100"/></a>
                     <div class="quote-lisa-text">
-                      <p class="q">I picked up a head of your lettuce at a local grocery store today. What an amazing and beautiful lettuce it is! I’ve never seen another so full and green and tempting.</p>
+                      <p class="q">O cardápio digital é fantástico, inovou e melhorou muito o atendimento ao cliente. Excelente restaurante!</p>
                     </div>
                     <h5 class="quote-lisa-cite"><a href="#">Nicolas Torelli</a></h5>
-                    <p class="quote-lisa-status">Regular Client</p>
+                    <p class="quote-lisa-status">Cliente Satisfeito</p>
                   </div>
                 </article>
                 <!-- Quote Lisa-->
                 <article class="quote-lisa">
                   <div class="quote-lisa-body"><a class="quote-lisa-figure" href="#"><img class="img-circles" src="images/nicolas2.jpg" alt="" width="100" height="100"/></a>
                     <div class="quote-lisa-text">
-                      <p class="q">I wanted to tell you how amazing it was to see the farm and how much we love the food. Your apples and carrots are just wonderful and their taste is great.</p>
+                      <p class="q">Estive várias vezes tanto no almoço quanto no jantar. Ótimo atendimento, comida excelente e ótimas bebidas também. Preços acessíveis.</p>
                     </div>
                     <h5 class="quote-lisa-cite"><a href="#">John Wilson</a></h5>
-                    <p class="quote-lisa-status">Regular Client</p>
+                    <p class="quote-lisa-status">Cliente Satisfeito</p>
                   </div>
                 </article>
                 <!-- Quote Lisa-->
                 <article class="quote-lisa">
                   <div class="quote-lisa-body"><a class="quote-lisa-figure" href="#"><img class="img-circles" src="images/nicolas.jpg" alt="" width="100" height="100"/></a>
                     <div class="quote-lisa-text">
-                      <p class="q">The food from your farm is wonderful. So many nights when we sit down to dinner we can say everything on this plate is locally grown and delicious. Thank you!</p>
+                      <p class="q">Restaurante maravilhoso, pra mim, o melhor de Botucatu. Pizzas tops, carta de vinho incrível e atendimento impecável!</p>
                     </div>
-                    <h5 class="quote-lisa-cite"><a href="#">Kate Anderson</a></h5>
-                    <p class="quote-lisa-status">Regular Client</p>
+                    <h5 class="quote-lisa-cite"><a href="#">Torelli</a></h5>
+                    <p class="quote-lisa-status">Cliente Satisfeito</p>
                   </div>
                 </article>
               </div>
@@ -123,28 +125,28 @@
           <div class="owl-item">
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary thumbnail-md">
-              <div class="thumbnail-mary-figure"><img src="images/project-1-420x308.jpg" alt="" width="420" height="308"/>
+              <div class="thumbnail-mary-figure"><img src="images/primeira.jpg" alt="" height="308"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-11-800x1200.jpg" data-lightgallery="item"><img src="images/project-1-420x308.jpg" alt="" width="420" height="308"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/primeira-grande.jpg" data-lightgallery="item"><img src="images/project-1-420x308.jpg" alt="" width="420" height="308"/></a>
               </div>
             </article>
             <div class="thumbnail-mary-description">
-              <h5 class="thumbnail-mary-project"><a href="#">Farm Establishment</a></h5><span class="thumbnail-mary-decor"></span>
+              <h5 class="thumbnail-mary-project"><a href="#">Primeira loja física</a></h5><span class="thumbnail-mary-decor"></span>
               <h5 class="thumbnail-mary-time">
-                <time datetime="1999">1999</time>
+                <time datetime="1993">1993</time>
               </h5>
             </div>
           </div>
           <div class="owl-item">
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary thumbnail-md">
-              <div class="thumbnail-mary-figure"><img src="images/project-2-420x308.jpg" alt="" width="420" height="308"/>
+              <div class="thumbnail-mary-figure"><img src="images/parcerias.jpg" alt="" width="420" height="308"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-5-800x1200.jpg" data-lightgallery="item"><img src="images/project-2-420x308.jpg" alt="" width="420" height="308"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/parcerias-grande.jpg" data-lightgallery="item"><img src="images/project-2-420x308.jpg" alt="" width="420" height="308"/></a>
               </div>
             </article>
             <div class="thumbnail-mary-description">
-              <h5 class="thumbnail-mary-project"><a href="#">New Partners</a></h5><span class="thumbnail-mary-decor"></span>
+              <h5 class="thumbnail-mary-project"><a href="#">Novas Parcerias</a></h5><span class="thumbnail-mary-decor"></span>
               <h5 class="thumbnail-mary-time">
                 <time datetime="2005">2005</time>
               </h5>
@@ -153,13 +155,13 @@
           <div class="owl-item">
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary thumbnail-md">
-              <div class="thumbnail-mary-figure"><img src="images/project-3-420x308.jpg" alt="" width="420" height="308"/>
+              <div class="thumbnail-mary-figure"><img src="images/loja-online.jpg" alt="" width="420" height="308"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-4-800x1200.jpg" data-lightgallery="item"><img src="images/project-3-420x308.jpg" alt="" width="420" height="308"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/loja-online-grande.jpg" data-lightgallery="item"><img src="images/project-3-420x308.jpg" alt="" width="420" height="308"/></a>
               </div>
             </article>
             <div class="thumbnail-mary-description">
-              <h5 class="thumbnail-mary-project"><a href="#">Opening Our Online Store</a></h5><span class="thumbnail-mary-decor"></span>
+              <h5 class="thumbnail-mary-project"><a href="#">Inauguração da Loja Online</a></h5><span class="thumbnail-mary-decor"></span>
               <h5 class="thumbnail-mary-time">
                 <time datetime="2010">2010</time>
               </h5>
@@ -168,13 +170,13 @@
           <div class="owl-item">
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary thumbnail-md">
-              <div class="thumbnail-mary-figure"><img src="images/project-4-420x308.jpg" alt="" width="420" height="308"/>
+              <div class="thumbnail-mary-figure"><img src="images/referencia.jpg" alt="" width="420" height="308"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-3-800x1200.jpg" data-lightgallery="item"><img src="images/project-4-420x308.jpg" alt="" width="420" height="308"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/referencia-grande.jpg" data-lightgallery="item"><img src="images/project-4-420x308.jpg" alt="" width="420" height="308"/></a>
               </div>
             </article>
             <div class="thumbnail-mary-description">
-              <h5 class="thumbnail-mary-project"><a href="#">Farming Industry Leader</a></h5><span class="thumbnail-mary-decor"></span>
+              <h5 class="thumbnail-mary-project"><a href="#">Referência na Cidade</a></h5><span class="thumbnail-mary-decor"></span>
               <h5 class="thumbnail-mary-time">
                 <time datetime="2013">2013</time>
               </h5>
@@ -183,15 +185,15 @@
           <div class="owl-item">
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary thumbnail-md">
-              <div class="thumbnail-mary-figure"><img src="images/project-5-420x308.jpg" alt="" width="420" height="308"/>
+              <div class="thumbnail-mary-figure"><img src="images/inovacao.jpg" alt="" width="420" height="308"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-1-1200x800.jpg" data-lightgallery="item"><img src="images/project-5-420x308.jpg" alt="" width="420" height="308"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/inovacao-grande.jpg" data-lightgallery="item"><img src="images/project-5-420x308.jpg" alt="" width="420" height="308"/></a>
               </div>
             </article>
             <div class="thumbnail-mary-description">
-              <h5 class="thumbnail-mary-project"><a href="#">Farming Innovations</a></h5><span class="thumbnail-mary-decor"></span>
+              <h5 class="thumbnail-mary-project"><a href="#">Continuamos Inovando</a></h5><span class="thumbnail-mary-decor"></span>
               <h5 class="thumbnail-mary-time">
-                <time datetime="2019">2019</time>
+                <time datetime="2021">2021</time>
               </h5>
             </div>
           </div>
@@ -201,10 +203,10 @@
       <section class="section section-md section-last bg-gray-100">
         <div class="container">
           <div class="oh">
-            <h2 class="wow slideInUp" data-wow-delay="0s">Our Partners</h2>
+            <h2 class="wow slideInUp" data-wow-delay="0s">Nossos Parceiros</h2>
           </div>
           <!-- Owl Carousel-->
-          <div class="owl-carousel owl-clients owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-margin="30" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut"><a class="clients-modern" href="#"><img src="images/clients-1-270x145.png" alt="" width="270" height="145"/></a><a class="clients-modern" href="#"><img src="images/clients-2-270x145.png" alt="" width="270" height="145"/></a><a class="clients-modern" href="#"><img src="images/clients-3-270x145.png" alt="" width="270" height="145"/></a><a class="clients-modern" href="#"><img src="images/clients-4-270x145.png" alt="" width="270" height="145"/></a></div>
+          <div class="owl-carousel owl-clients owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-margin="30" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut"><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a></div>
         </div>
       </section>
 
