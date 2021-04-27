@@ -1,4 +1,20 @@
-<?php include_once("cabecalho.php"); ?>
+<?php
+ include_once("cabecalho.php");
+ include_once("conexao.php");
+ 
+ //VERIFICAR SE EXISTE UM USUÁRIO ADMINISTRADOR, CRIAR CASO NÃO EXISTA.
+  $senha = '123';
+  $senha_cript = md5($senha);
+  $res_usuarios = $pdo->query("SELECT * from usuarios where nivel = 'Admin'");
+  $dados_usuarios = $res_usuarios->fetchAll(PDO::FETCH_ASSOC);
+  $total_usuarios = count($dados_usuarios);
+
+  if($total_usuarios == 0){
+    $res_insert = $pdo->query("INSERT into usuarios (nome, cpf, telefone, usuario, senha, nivel) values ('Administrador', '000.000.000-00', '(14)3333-3333', '$email_adm', '$senha_cript', 'Admin')");
+  }
+ 
+ 
+?>
 
       <section class="section swiper-container swiper-slider swiper-slider-modern" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="true" data-slide-effect="fade">
         <div class="swiper-wrapper text-left">

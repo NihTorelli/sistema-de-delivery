@@ -1,3 +1,5 @@
+<?php @session_start(); ?>
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="pt-br">
   <head>
@@ -49,6 +51,13 @@
                       <button class="rd-navbar-basket fl-bigmug-line-shopping198" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
                       <div class="cart-inline">
                         <div class="cart-inline-header">
+                          <span class="dados-usuarios">
+                          <p><a href="#" title="Editar Perfil">
+                            <?php echo $_SESSION['nome_usuario']; ?>
+                            </a>
+                          <a href="logout.php" title="Sair">
+                            <img src="images/logout.png" width="20px">
+                          </a></i></p></span>
                           <h5 class="cart-inline-title">Carrinho:<span> 2</span> Produtos</h5>
                           <h6 class="cart-inline-title">Valor total:<span> $800</span></h6>
                         </div>
@@ -107,11 +116,28 @@
                       <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="sobre.php">Sobre</a>
-                      </li>
-                      <li class="rd-nav-item"><a target="_blank" class="rd-nav-link" href="login.php">Login</a>
-                      </li>
+                      </li>                      
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contatos.php">Contatos</a>
                       </li>
+                      <?php if(!isset($_SESSION['nome_usuario'])){
+                        echo '<li class="rd-nav-item"><a target="_blank" class="rd-nav-link" href="login.php">Login</a>
+                      </li>';
+                      }else {
+                        if ($_SESSION['nivel_usuario'] == 'Cliente'){
+                          echo '<li class="rd-nav-item"><a target="_blank" class="rd-nav-link" href="painel-cliente">Painel</a>
+                          </li>';
+                        }
+
+                        if ($_SESSION['nivel_usuario'] == 'Admin'){
+                          echo '<li class="rd-nav-item"><a target="_blank" class="rd-nav-link" href="painel-adm">Painel</a>
+                          </li>';
+                        }
+
+                        if ($_SESSION['nivel_usuario'] == 'Balconista'){
+                          echo '<li class="rd-nav-item"><a target="_blank" class="rd-nav-link" href="painel-balcao">Painel</a>
+                          </li>';
+                        }
+                      } ?>
                     </ul>
                   </div>
                   <div class="rd-navbar-project-hamburger" data-multitoggle=".rd-navbar-main" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate>

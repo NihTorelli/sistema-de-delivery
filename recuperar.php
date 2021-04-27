@@ -2,7 +2,7 @@
 
 include_once("conexao.php");
 
-$email_usuario = $_POST['email'];
+$email_usuario = $_POST['email-recuperar'];
 
     $res = $pdo->prepare("SELECT * FROM usuarios WHERE usuario = :usuario");
 
@@ -18,7 +18,10 @@ $email_usuario = $_POST['email'];
         $nivel_usu = $dados[0]['nivel'];
     }else {
         echo 'Este e-mail não está cadastrado no sistema!';
+        exit();
     }
+
+    echo "Senha enviada para o seu Email!";
 
     //CÓDIGO DE ENVIO DE E-MAIL
     $to = $email_usuario;
