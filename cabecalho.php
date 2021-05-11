@@ -23,12 +23,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="cssload-container"><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
+    
     <div class="page">
       <!-- Page Header-->
       <header class="section page-header">
@@ -103,10 +98,10 @@
                     <!-- RD Navbar Search-->
                     <div class="rd-navbar-search">
                       <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                      <form class="rd-search" action="#">
+                      <form class="rd-search" action="produtos.php">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-search-form-input">Procurar...</label>
-                          <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="search">
+                          <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="buscar">
                           <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
                         </div>
                       </form>
@@ -116,7 +111,13 @@
                       <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="sobre.php">Sobre</a>
-                      </li>                      
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="categorias.php">Categorias</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="produtos.php">Produtos</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="combos.php">Combos</a>
+                      </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contatos.php">Contatos</a>
                       </li>
                       <?php if(!isset($_SESSION['nome_usuario'])){
