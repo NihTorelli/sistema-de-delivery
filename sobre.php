@@ -12,7 +12,7 @@
               <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-4">
                 <!-- Nav tabs-->
                 <ul class="nav nav-tabs">
-                  <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-4-1" data-toggle="tab">Limpeza e Higiene</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-4-1" data-toggle="tab">Limpeza</a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-4-2" data-toggle="tab">Nossos Valores</a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-4-3" data-toggle="tab">Satisfação do Cliente</a></li>
                 </ul>
@@ -20,7 +20,7 @@
                 <div class="tab-content">
                   <div class="tab-pane fade show active" id="tabs-4-1">
                     <p>Um ambiente de trabalho limpo, além de favorecer a saúde e necessidades fisiológicas dos indivíduos (a base da pirâmide de Maslow), também beneficia o desenvolvimento, a conduta e a alta performance da empresa, visto que, ao trabalhar em um local que promove bem-estar, os colaboradores se sentem motivados e exercem suas funções de forma eficaz. Além disso, a limpeza do espaço também previne acidentes e garante a manutenção dos equipamentos da organização.</p>
-                    <p>A arrumação, limpeza e higiene da empresa traz vantagens tanto para a mesma, como para seus profissionais. Entenda:</p>
+                    
                     <div class="text-center text-sm-left offset-top-30">
                       <ul class="row-16 list-0 list-custom list-marked list-marked-sm list-marked-secondary">
                         <li>Favorece a qualidade de vida e saúde do quadro de colaboradores;</li>
@@ -31,7 +31,7 @@
                         <li>Facilita a localização dos equipamentos e materiais;</li>
                       </ul>
                     </div>
-                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Veja Mais</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
+                    <div class="group-md group-middle"><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos">Contate-nos</a></div>
                   </div>
                   <div class="tab-pane fade" id="tabs-4-2">                    
                     <div class="text-center text-sm-left offset-top-30">
@@ -47,7 +47,7 @@
                         <li>Humildade</li>
                       </ul>
                     </div>
-                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Veja Mais</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
+                    <div class="group-md group-middle"><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
                   </div>
                   <div class="tab-pane fade" id="tabs-4-3">
                     <p>Qualidade significa oferecer a nossos clientes produtos inovadores que satisfaçam plenamente as suas exigências.</p>
@@ -60,7 +60,7 @@
                         <li>Organização</li>                        
                       </ul>
                     </div>
-                    <div class="group-md group-middle"><a class="button button-width-xl-230 button-primary button-pipaluk" href="#">Veja Mais</a><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos.php">Contate-nos</a></div>
+                    <div class="group-md group-middle"><a class="button button-width-xl-310 button-default-outline button-wapasha" href="contatos">Contate-nos</a></div>
                   </div>
                 </div>
               </div>
@@ -206,7 +206,12 @@
             <h2 class="wow slideInUp" data-wow-delay="0s">Nossos Parceiros</h2>
           </div>
           <!-- Owl Carousel-->
-          <div class="owl-carousel owl-clients owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-margin="30" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut"><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a><a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a></div>
+          <div class="owl-carousel owl-clients owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-margin="30" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut">
+            <a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a>
+            <a target="_blank" class="clients-modern" href="https://santamarcelina.org.br/educacao/"><img src="images/santamarcelina.jpg" alt="" width="270" height="145"/></a>
+            <a target="_blank" class="clients-modern" href="https://www.vestibularfatec.com.br/"><img src="images/fatec.png" alt="" width="270" height="145"/></a>
+            <a target="_blank" class="clients-modern" href="https://santamarcelina.org.br/educacao/"><img src="images/santamarcelina.jpg" alt="" width="270" height="145"/></a>
+          </div>
         </div>
       </section>
 
@@ -219,3 +224,6 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script src="js/mascaras.js"></script>

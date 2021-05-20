@@ -40,6 +40,15 @@
 
     echo 'Cadastrado com Sucesso!!';
 
+
+    $res = $pdo->prepare("INSERT into clientes (nome, cpf, telefone, email) values (:nome, :cpf, :telefone, :usuario)");
+    $res->bindValue(":nome", $nome);
+    $res->bindValue(":usuario", $email);
+    $res->bindValue(":cpf", $cpf);    
+    $res->bindValue(":telefone", $telefone);
+
+    $res->execute();
+
     
 
     ?>

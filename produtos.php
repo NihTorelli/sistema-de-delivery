@@ -2,6 +2,8 @@
 include_once("cabecalho.php");
 include_once("conexao.php");
 
+$cpf_cliente = @$_SESSION['cpf_usuario'];
+
 if(@$_GET['categoria'] != ''){
   $nome_url = $_GET['categoria'];
 
@@ -45,7 +47,7 @@ if(@$_GET['buscar'] != ''){
           <?php }else{
              $res = $pdo->query("SELECT * from produtos where combo is null order by vendas desc LIMIT 8");
            ?>
-         <h5>Produtos Mais Vendidos</h5><span><a title="Ver toda a lista de Produtos" href="lista-produtos.php">Ver Todos</a></span>
+         <h5>Produtos Mais Vendidos</h5><span><a title="Ver toda a lista de Produtos" href="lista-produtos">Ver Todos</a></span>
         <?php } ?>
         <div class="row row-30">
 
@@ -87,7 +89,10 @@ if(@$_GET['buscar'] != ''){
                   <div class="unit flex-row flex-lg-column">
                     <div class="unit-left">
                       <div class="product-figure"><img src="images/produtos/<?php echo $imagem ?>" alt="" width="270" height="280"/>
-                        <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">Add ao Carrinho</a></div>
+                        <form method="post">
+
+                        <div class="product-button"><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-md button-white button-ujarak" id="btn-carrinho">Add ao Carrinho</a></div>
+                        </form>
                       </div>
                     </div>
                     <div class="unit-body">
@@ -95,7 +100,7 @@ if(@$_GET['buscar'] != ''){
                       <div class="product-price-wrap">
                         
                         <div class="product-price">R$<?php echo $valor ?></div>
-                      </div><a class="button button-sm button-secondary button-ujarak" href="#">Add ao Carrinho</a>
+                      </div><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-sm button-secondary button-ujarak" href="">Add ao Carrinho</a>
                     </div>
                   </div>
                 </article>
@@ -154,7 +159,7 @@ if(@$_GET['buscar'] != ''){
                   <div class="unit flex-row flex-lg-column">
                     <div class="unit-left">
                       <div class="product-figure"><img src="images/produtos/<?php echo $imagem ?>" alt="" width="270" height="280"/>
-                        <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">Add ao Carrinho</a></div>
+                        <div class="product-button"><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-md button-white button-ujarak" href="">Add ao Carrinho</a></div>
                       </div>
                     </div>
                     <div class="unit-body">
@@ -162,7 +167,7 @@ if(@$_GET['buscar'] != ''){
                       <div class="product-price-wrap">
                         
                         <div class="product-price">R$<?php echo $valor ?></div>
-                      </div><a class="button button-sm button-secondary button-ujarak" href="#">Add ao Carrinho</a>
+                      </div><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-sm button-secondary button-ujarak" href="">Add ao Carrinho</a>
                     </div>
                   </div>
                 </article>
@@ -222,7 +227,11 @@ if(@$_GET['buscar'] != ''){
                   <div class="unit flex-row flex-lg-column">
                     <div class="unit-left">
                       <div class="product-figure"><img src="images/produtos/<?php echo $imagem ?>" alt="" width="270" height="280"/>
-                        <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">Add ao Carrinho</a></div>
+                        <form method="post">
+                        <input type="hidden" name="id" value="<?php echo $id ?>">
+                        <input type="hidden" name="cpf" value="<?php echo $cpf_cliente ?>">
+                        <div class="product-button"><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-md button-white button-ujarak" id="btn-carrinho" href="">Add ao Carrinho</a></div>
+                        </form>
                       </div>
                     </div>
                     <div class="unit-body">
@@ -230,7 +239,7 @@ if(@$_GET['buscar'] != ''){
                       <div class="product-price-wrap">
                         
                         <div class="product-price">R$<?php echo $valor ?></div>
-                      </div><a class="button button-sm button-secondary button-ujarak" href="#">Add ao Carrinho</a>
+                      </div><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-sm button-secondary button-ujarak" href="">Add ao Carrinho</a>
                     </div>
                   </div>
                 </article>
@@ -302,3 +311,26 @@ function setaDadosModal(descricao, descricaoLonga) {
     $("#texto-descricao-longa").text(descricaoLonga);
 }
 </script>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script src="js/mascaras.js"></script>
+
+<?php 
+  $res = $pdo->query("SELECT * from carrinho where cpf = '$cpf_cliente' and id_venda = 0 order by id asc");
+  $dados = $res->fetchAll(PDO::FETCH_ASSOC);
+  $linhas = count($dados);
+
+?>
+
+
+
+
+<?php include_once("modal-carrinho.php") ?>
+
+
+

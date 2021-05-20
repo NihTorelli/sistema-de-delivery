@@ -3,10 +3,17 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^produtos-da-categoria-de-(.*)$ produtos.php?categoria=$1 [L]
+RewriteRule ^dados-(.*)$ index.php?funcao=$1 [L]
 RewriteRule ^categorias(.*)$ categorias.php [L]
 RewriteRule ^produtos(.*)$ produtos.php [L]
 RewriteRule ^combos(.*)$ combos.php [L]
 RewriteRule ^combos(.*)$ combos.php [L]
+RewriteRule ^login(.*)$ login.php [L]
+RewriteRule ^contatos(.*)$ contatos.php [L]
+RewriteRule ^sobre(.*)$ sobre.php [L]
+RewriteRule ^lista-produtos(.*)$ lista-produtos.php [L]
+RewriteRule ^finalizar-compra(.*)$ finalizar-compra.php [L]
+
 
 AddHandler application/x-httpd-php70 .php
 <IfModule mod_suphp.c>

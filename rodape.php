@@ -11,7 +11,7 @@
                       <li>
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                          <div class="unit-body"><a class="link-phone" href="http://api.whatsapp.com/send?1=pt_BR&phone=5514998988662">(14) 99898-8662</a></div>
+                          <div class="unit-body"><a class="link-phone" target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=5514998988662">(14) 99898-8662</a></div>
                         </div>
                       </li>
                       <li>
@@ -25,7 +25,7 @@
                       <li>
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                          <div class="unit-body"><a class="link-location" href="https://www.google.com.br/maps/place/R.+Jos%C3%A9+Campos+Aranha,+40+-+Conj.+Res.+Frei+Fidelis,+Botucatu+-+SP,+18606-115/@-22.8980599,-48.4507663,17z/data=!4m13!1m7!3m6!1s0x94c6df72a95267d5:0x8da0a7db08c83ec6!2sR.+Jos%C3%A9+Campos+Aranha,+40+-+Conj.+Res.+Frei+Fidelis,+Botucatu+-+SP,+18606-115!3b1!8m2!3d-22.8980649!4d-48.4485776!3m4!1s0x94c6df72a95267d5:0x8da0a7db08c83ec6!8m2!3d-22.8980649!4d-48.4485776">Rua José de Campos Aranha, 40 - Cecap</a></div>
+                          <div class="unit-body"><a class="link-location" target="_blank" href="https://www.google.com.br/maps/place/R.+Jos%C3%A9+Campos+Aranha,+40+-+Conj.+Res.+Frei+Fidelis,+Botucatu+-+SP,+18606-115/@-22.8980599,-48.4507663,17z/data=!4m13!1m7!3m6!1s0x94c6df72a95267d5:0x8da0a7db08c83ec6!2sR.+Jos%C3%A9+Campos+Aranha,+40+-+Conj.+Res.+Frei+Fidelis,+Botucatu+-+SP,+18606-115!3b1!8m2!3d-22.8980649!4d-48.4485776!3m4!1s0x94c6df72a95267d5:0x8da0a7db08c83ec6!8m2!3d-22.8980649!4d-48.4485776">Rua José de Campos Aranha, 40 - Cecap</a></div>
                         </div>
                       </li>
                     </ul>
@@ -48,12 +48,39 @@
                       <p class="text-white">Siga-nos</p>
                       <div>
                         <ul class="list-inline list-inline-sm footer-social-list-2">
-                          <li><a class="icon fa fa-facebook" href="https://www.facebook.com/nicolas.torelli.7503/"></a></li>
-                          <li><a class="icon fa fa-twitter" href="https://twitter.com/nih_torelli"></a></li>                          
-                          <li><a class="icon fa fa-instagram" href="https://www.instagram.com/torellinicolas/"></a></li>
-                          <li><a class="icon fa fa-pinterest" href="https://br.pinterest.com/"></a></li>
+                          <li><a class="icon fa fa-facebook" target="_blank" href="https://www.facebook.com/nicolas.torelli.7503/"></a></li>
+                          <li><a class="icon fa fa-twitter" target="_blank" href="https://twitter.com/nih_torelli"></a></li>                          
+                          <li><a class="icon fa fa-instagram" target="_blank" href="https://www.instagram.com/torellinicolas/"></a></li>
+                          <li><a class="icon fa fa-pinterest" target="_blank" href="https://br.pinterest.com/"></a></li>
                         </ul>
                       </div>
+                      <select class="form-control form-control-sm" id="" name="bairro">
+                           
+                          
+                        <option value="">Bairros que entregamos</option>';
+                          
+
+                          <?php
+                          //CARREGAR TODOS OS REGISTROS EXISTENTES
+                          $res = $pdo->query("SELECT* from locais order by nome asc");
+                          $dados = $res->fetchAll(PDO::FETCH_ASSOC);
+
+                          for ($i = 0; $i < count($dados); $i++){
+                            foreach ($dados[$i] as $key => $value){                      
+                            }
+
+                            $id_item = $dados[$i]['id'];
+                            $nome_item = $dados[$i]['nome'];
+
+                            
+                              echo '<option value="'.$nome_item.'">'.$nome_item.'</option>';
+                            
+                          }
+                          ?>
+
+
+                          
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -112,7 +139,7 @@
             <div class="group-sm group-sm-justify">
               <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span> <span>Nicolas Torelli - Trabalho de Conclusão de Curso</span>
               </p>
-              <p class="rights">Faculdade de Tecnologia de Botucatu - <a target="_blank" href="https://www.vestibularfatec.com.br/">FATEC</a></p>           
+              <p class="rights"><a target="_blank" href="https://www.vestibularfatec.com.br/">Faculdade de Tecnologia de Botucatu - FATEC</a></p>           
             </div>
           </div>
         </div>

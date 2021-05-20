@@ -94,7 +94,9 @@ if(isset($_POST['email2']) and $_POST['email2'] != ''){
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/foto-login.png" width="100%">
+                            <a href="produtos">
+                            <img src="images/foto-login.jpg" width="100%">
+                            </a>
 
                         </div>
 

@@ -1,10 +1,29 @@
 <?php
-
+$pagina = 'index.php';
  @session_start();
+ include_once("../conexao.php");
 
 if($_SESSION['nivel_usuario'] != 'Cliente'){
     echo "<script language='javascript'>window.location='../login.php'; </script>";
 }
+
+//ESTRUTURA DO MENU 
+$item1 = 'home';
+$item2 = 'produtos';
+$item3 = 'categorias';
+$item4 = 'locais';
+
+//CLASSE PARA OS ITENS ATIVOS
+if (@$_GET['acao'] == $item1){
+  $item1ativo = 'active';
+}else if (@$_GET['acao'] == $item2){
+  $item2ativo = 'active';
+}else if (@$_GET['acao'] == $item3){
+  $item3ativo = 'active';
+}else if (@$_GET['acao'] == $item4){
+  $item4ativo = 'active';
+}
+
 
  ?>
 
@@ -15,7 +34,7 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Painel do Cliente</title>
+  <title>Painel do Administrador</title>
 
  <link rel="icon" href="../images/favicon-nova.ico" type="image/x-icon">
   <!-- Font Awesome Icons -->
@@ -26,6 +45,35 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/painel.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="dist/js/demo.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+
+<!-- PAGE SCRIPTS -->
+<script src="dist/js/pages/dashboard2.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -37,35 +85,36 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link <?php echo $item1ativo ?>">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Pedidos</a>
+        <a href="index.php?acao=<?php echo $item2 ?>" class="nav-link <?php echo $item2ativo ?>">Produtos</a>
       </li>
+
+        <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php?acao=<?php echo $item3 ?>" class="nav-link <?php echo $item3ativo ?>">Categorias</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php?acao=<?php echo $item4 ?>" class="nav-link <?php echo $item4ativo ?>">Locais</a>
+      </li>
+
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+   
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="fas fa-user"></i>
+          <?php echo $_SESSION['nome_usuario'] ?>
+          <i class="fas fa-sign-out-alt ml-1"></i>
           
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="#" class="dropdown-item">
+
             <!-- Message Start -->
             <div class="media">
               <img src="../images/usuario-icone.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
@@ -75,7 +124,7 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
                   <span class="float-right text-sm text-danger"><i class="fas fa-star text-success"></i></span>
                 </h3>
                  <small><?php echo $_SESSION['email_usuario'] ?></small>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i><small> Último Pedido - 10/05/2020</small></p>
+               
               </div>
             </div>
             <!-- Message End -->
@@ -87,7 +136,7 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
               <img src="../images/logout.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Sair do Painel (Finalizar Sessão)
+                  Sair do Site
                   <span class="float-right text-sm text-muted"><i class="fas fa-star text-danger"></i></span>
                 </h3>
                 <p class="text-sm">Voltar para o Login</p>
@@ -108,7 +157,7 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
      
-      <span class="brand-text font-weight-light ml-4">Painel Cliente</span>
+      <span class="brand-text font-weight-light ml-4">Painel Administrativo</span>
    
     </a>
 
@@ -131,8 +180,8 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
                with font-awesome or any other icon font library -->
          
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link <?php echo $item1ativo ?>">
+              <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
                 
@@ -143,10 +192,32 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
 
 
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="index.php?acao=<?php echo $item2 ?>" class="nav-link <?php echo $item2ativo ?>">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
-                Pedidos
+                Produtos
+                
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="index.php?acao=<?php echo $item3 ?>" class="nav-link <?php echo $item3ativo ?>">
+              <i class="nav-icon fas fa-th-list"></i>
+              <p>
+                Categorias
+                
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="index.php?acao=<?php echo $item4 ?>" class="nav-link <?php echo $item4ativo ?>">
+              <i class="nav-icon fas fa-city"></i>
+              <p>
+                Locais
                 
               </p>
             </a>
@@ -174,8 +245,7 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Início</li>
+              
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -183,77 +253,27 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Info boxes -->
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+    <!--CHAMADA DOS INCLUDES DAS PÁGINAS-->
+    <?php
+    if (@$_GET['acao'] == $item1){
+      include_once($item1.'.php');
+    }else if (@$_GET['acao'] == $item2){
+      include_once($item2.'.php');
+    }else if (@$_GET['acao'] == $item3){
+      include_once($item3.'.php');
+    }else if (@$_GET['acao'] == $item4){
+      include_once($item4.'.php');
+    }  
+    
 
-              <div class="info-box-content">
-                <span class="info-box-text">Pedidos</span>
-                <span class="info-box-number">
-                  10
-                  <small></small>
-                </span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-thumbs-up"></i></span>
+    else{
+      include_once($item1.'.php');
+    }
+    ?>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Avaliações</span>
-                <span class="info-box-number">8</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
 
-          <!-- fix for small devices only -->
-          <div class="clearfix hidden-md-up"></div>
 
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Carrinho</span>
-                <span class="info-box-number">4</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-address-card"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Cartão Fidelidade</span>
-                <span class="info-box-number">8</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
-        
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
+    
   </div>
   <!-- /.content-wrapper -->
 
@@ -268,35 +288,12 @@ if($_SESSION['nivel_usuario'] != 'Cliente'){
     <strong> &copy; 2021 <a href="https://www.vestibularfatec.com.br/">Faculdade de Tecnologia de Botucatu - FATEC</a> Nicolas Torelli - Trabalho de Conclusão de Curso.</strong>
     
     <div class="float-right d-none d-sm-inline-block">
-      <b>Versão</b> 1.0
+      <b>Versão</b> 1.0.0
     </div>
   </footer>
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
-<script src="dist/js/demo.js"></script>
-
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-
-<!-- PAGE SCRIPTS -->
-<script src="dist/js/pages/dashboard2.js"></script>
 </body>
 </html>

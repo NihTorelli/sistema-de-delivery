@@ -36,7 +36,7 @@ if($descricao == ''){
 }
 
 if($nome == ''){
-	echo "Preencha o Valor!";
+	echo "Preencha o Nome!";
 	exit();
 }
 

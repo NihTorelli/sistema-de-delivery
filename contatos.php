@@ -48,8 +48,8 @@
                 <div class="row row-14 gutters-14">
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="contact-first-name" type="text" name="name" placeholder="Nome e Sobrenome" data-constraints="@Required">
-                      <label class="form-label" for="contact-first-name">Nome</label>
+                      <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                      <label class="form-label" for="contact-first-name">Nome e Sobrenome</label>
                     </div>
                   </div>
 

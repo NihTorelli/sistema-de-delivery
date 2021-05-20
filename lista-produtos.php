@@ -49,7 +49,7 @@ include_once("conexao.php");
                   <div class="unit flex-row flex-lg-column">
                     <div class="unit-left">
                       <div class="product-figure"><img src="images/produtos/<?php echo $imagem ?>" alt="" width="270" height="280"/>
-                        <div class="product-button"><a class="button button-md button-white button-ujarak" href="#">Add ao Carrinho</a></div>
+                        <div class="product-button"><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-md button-white button-ujarak" href="">Add ao Carrinho</a></div>
                       </div>
                     </div>
                     <div class="unit-body">
@@ -57,7 +57,7 @@ include_once("conexao.php");
                       <div class="product-price-wrap">
                         
                         <div class="product-price">R$<?php echo $valor ?></div>
-                      </div><a class="button button-sm button-secondary button-ujarak" href="#">Add ao Carrinho</a>
+                      </div><a onclick="carrinhoModal('<?php echo $id ?>')" class="button button-sm button-secondary button-ujarak" href="">Add ao Carrinho</a>
                     </div>
                   </div>
                 </article>
@@ -131,3 +131,7 @@ function setaDadosModal(descricao, descricaoLonga) {
     $("#texto-descricao-longa").text(descricaoLonga);
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script src="js/mascaras.js"></script>
+
+<?php include_once("modal-carrinho.php") ?>

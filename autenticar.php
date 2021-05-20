@@ -34,7 +34,7 @@ if($linhas > 0){
 	}
 
 	if($_SESSION['nivel_usuario'] == 'Cliente'){
-		echo "<script language='javascript'>window.location='index.php'; </script>";
+		echo "<script language='javascript'>window.location='categorias'; </script>";
 		exit();
 	}
 
@@ -47,7 +47,7 @@ if($linhas > 0){
 	
 }else{
 	echo "<script language='javascript'>window.alert('Dados Incorretos!!'); </script>";
-	echo "<script language='javascript'>window.location='login.php'; </script>";
+	echo "<script language='javascript'>window.location='login'; </script>";
 	
 }
 

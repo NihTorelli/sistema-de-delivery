@@ -11,6 +11,7 @@ if($_SESSION['nivel_usuario'] != 'Admin'){
 $item1 = 'home';
 $item2 = 'produtos';
 $item3 = 'categorias';
+$item4 = 'locais';
 
 //CLASSE PARA OS ITENS ATIVOS
 if (@$_GET['acao'] == $item1){
@@ -19,6 +20,8 @@ if (@$_GET['acao'] == $item1){
   $item2ativo = 'active';
 }else if (@$_GET['acao'] == $item3){
   $item3ativo = 'active';
+}else if (@$_GET['acao'] == $item4){
+  $item4ativo = 'active';
 }
 
 
@@ -90,6 +93,10 @@ if (@$_GET['acao'] == $item1){
 
         <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php?acao=<?php echo $item3 ?>" class="nav-link <?php echo $item3ativo ?>">Categorias</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php?acao=<?php echo $item4 ?>" class="nav-link <?php echo $item4ativo ?>">Locais</a>
       </li>
 
     </ul>
@@ -206,6 +213,17 @@ if (@$_GET['acao'] == $item1){
           </li>
 
 
+          <li class="nav-item">
+            <a href="index.php?acao=<?php echo $item4 ?>" class="nav-link <?php echo $item4ativo ?>">
+              <i class="nav-icon fas fa-city"></i>
+              <p>
+                Locais
+                
+              </p>
+            </a>
+          </li>
+
+
 
          
           
@@ -243,7 +261,10 @@ if (@$_GET['acao'] == $item1){
       include_once($item2.'.php');
     }else if (@$_GET['acao'] == $item3){
       include_once($item3.'.php');
-    }
+    }else if (@$_GET['acao'] == $item4){
+      include_once($item4.'.php');
+    }  
+    
 
     else{
       include_once($item1.'.php');
