@@ -34,7 +34,7 @@ if($tipo == 'Dinheiro'){
 if($tipo == 'Mercado Pago'){
 	$status = 'Aguardando';
 }else{
-	$status = 'Concluído';
+	$status = 'Iniciado';
 }
 
 $cpf_cliente = @$_SESSION['cpf_usuario'];

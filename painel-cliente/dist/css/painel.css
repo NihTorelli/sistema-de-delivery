@@ -1,0 +1,15 @@
+.direita{
+    position: absolute;
+    right:0;
+    margin-right: 15px;
+}
+
+.tabelas{
+    font-size: 16px;
+}
+
+.classe_ativa_pag{
+    color:#4f0a0f;
+    font-weight: bold;
+    font-size: 18px;
+}

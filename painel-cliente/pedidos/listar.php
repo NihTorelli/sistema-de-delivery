@@ -3,8 +3,9 @@
 require_once("../../conexao.php");
 $pagina = 'pedidos';
 
-$txtbuscar = @$_POST['data'];
-$cpf_cliente = $_SESSION['cpf_usuario'];
+
+@session_start();
+$cpf_cliente = @$_SESSION['cpf_usuario'];
 
 
 echo '
@@ -41,19 +42,15 @@ echo '
 		//CAMINHO DA PAGINAÇÃO
 		$caminho_pag = 'index.php?acao='.$pagina.'&';
 
-	if($txtbuscar == ''){
-		$res = $pdo->query("SELECT * from vendas where cpf = '$cpf_cliente' order by id desc LIMIT $limite, $itens_por_pagina");
-	}else{
-		$txtbuscar = @$_POST['txtbuscar'];
-		$res = $pdo->query("SELECT * from vendas where cpf = '$cpf_cliente' and data = '$txtbuscar' oder by id desc");
-
-	}
 	
-	$dados = $res->fetchAll(PDO::FETCH_ASSOC);
+		$res = $pdo->query("SELECT * from vendas where cliente = '$cpf_cliente' order by id desc LIMIT $limite, $itens_por_pagina");
+	
+	
+		$dados = $res->fetchAll(PDO::FETCH_ASSOC);
 
 
 		//TOTALIZAR OS REGISTROS PARA PAGINAÇÃO
-		$res_todos = $pdo->query("SELECT * from locais");
+		$res_todos = $pdo->query("SELECT * from vendas");
 		$dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
 		$num_total = count($dados_total);
 
@@ -99,7 +96,7 @@ echo  '
 </div> ';
 
 
-if($txtbuscar == ''){
+
 
 
 echo '
@@ -158,7 +155,6 @@ echo '
 
 ';
 
-}
 
 
 ?>
