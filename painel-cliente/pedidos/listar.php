@@ -1,9 +1,9 @@
 <?php 
 
 require_once("../../conexao.php");
-$pagina = 'locais';
+$pagina = 'pedidos';
 
-$txtbuscar = @$_POST['txtbuscar'];
+$txtbuscar = @$_POST['data'];
 
 
 echo '
@@ -11,10 +11,16 @@ echo '
 <table class="table table-sm mt-3 tabelas">
 	<thead class="thead-light">
 		<tr>
-			<th scope="col">Nome</th>
+			<th scope="col">Hora</th>
+			<th scope="col">Previsão de Entrega</th>
+			<th scope="col">Total</th>
+			<th scope="col">Tipo PGTO</th>
+			<th scope="col">Status</th>
+			<th scope="col">Pago</th>
+
 			
 			
-			<th scope="col">Ações</th>
+			
 		</tr>
 	</thead>
 	<tbody>';
@@ -35,10 +41,10 @@ echo '
 		$caminho_pag = 'index.php?acao='.$pagina.'&';
 
 	if($txtbuscar == ''){
-		$res = $pdo->query("SELECT * from locais order by nome asc LIMIT $limite, $itens_por_pagina");
+		$res = $pdo->query("SELECT * from vendas where cpf = '$cpf_cliente' order by id desc LIMIT $limite, $itens_por_pagina");
 	}else{
-		$txtbuscar = '%'.@$_POST['txtbuscar'].'%';
-		$res = $pdo->query("SELECT * from locais where nome LIKE '$txtbuscar' order by nome asc");
+		$txtbuscar = @$_POST['txtbuscar'];
+		$res = $pdo->query("SELECT * from vendas where cpf = '$cpf_cliente' and data = '$txtbuscar' oder by id desc");
 
 	}
 	
