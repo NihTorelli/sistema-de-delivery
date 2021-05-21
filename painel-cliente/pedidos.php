@@ -5,6 +5,7 @@ $pagina_pag = intval(@$_GET['pagina']);
 $itens_pag = intval(@$_GET['itens']);
 $agora = date('Y-m-d');
 
+
 ?>
 <div class="container ml-2 mr-2">
 	<nav class="navbar navbar-expand navbar-white navbar-light">

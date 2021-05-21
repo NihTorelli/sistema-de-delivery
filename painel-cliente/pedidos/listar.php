@@ -4,6 +4,7 @@ require_once("../../conexao.php");
 $pagina = 'pedidos';
 
 $txtbuscar = @$_POST['data'];
+$cpf_cliente = $_SESSION['cpf_usuario'];
 
 
 echo '
@@ -65,7 +66,11 @@ echo '
 			}
 
 			$id = $dados[$i]['id'];	
-			$nome = $dados[$i]['nome'];
+			$hora = $dados[$i]['hora'];
+			$total = $dados[$i]['total'];
+			$tipo_pgto = $dados[$i]['tipo_pgto'];
+			$status = $dados[$i]['status'];
+			$pago = $dados[$i]['pago'];
 			
 		
 
@@ -75,14 +80,15 @@ echo '
 		<tr>
 
 			
-			<td>'.$nome.'</td>
+			<td>'.$hora.'</td>
+			<td>'.$hora.'</td>
+			<td>'.$total.'</td>
+			<td>'.$tipo_pgto.'</td>
+			<td>'.$status.'</td>
+			<td>'.$pago.'</td>		
 			
 			
 			
-			<td>
-				<a href="index.php?acao='.$pagina.'&funcao=editar&id='.$id.'"><i class="fas fa-edit text-info"></i></a>
-				<a href="index.php?acao='.$pagina.'&funcao=excluir&id='.$id.'"><i class="far fa-trash-alt text-danger"></i></a>
-			</td>
 		</tr>';
 
 	}
