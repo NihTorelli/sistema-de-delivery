@@ -154,7 +154,7 @@ if(@$_GET['acao'] == $item1){
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
      
-      <span class="brand-text font-weight-light ml-4">Painel Cliente</span>
+      <span class="brand-text font-weight-light ml-4">Painel do Cliente</span>
    
     </a>
 

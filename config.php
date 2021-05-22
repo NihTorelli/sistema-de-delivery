@@ -20,4 +20,9 @@
     $itens_por_pagina_2 = 10;
     $itens_por_pagina_3 = 20;
 
+
+    //VARIAVEIS PARA O PEDIDO
+    $previsao_minutos = 50;
+    $taxa_entrega = 10;
+
 ?>

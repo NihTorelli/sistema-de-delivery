@@ -8,7 +8,11 @@ $agora = date('Y-m-d');
 
 ?>
 <div class="container ml-2 mr-2">
-	
+	<form method="post" id="frm">
+		<input type="hidden" name="pag" id="pag" value="<?php echo $pagina_pag ?>">
+		<input type="hidden" name="itens_pag" id="itens_pag" value="<?php echo $itens_pag ?>">
+	</form>
+
 
 	<div id="listar">
 		
