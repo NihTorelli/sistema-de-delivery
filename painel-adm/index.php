@@ -46,9 +46,7 @@ if (@$_GET['acao'] == $item1){
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="dist/css/painel.css">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
@@ -107,13 +105,13 @@ if (@$_GET['acao'] == $item1){
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+        <a class="nav-link" data-toggle="dropdown" href="">
           <?php echo $_SESSION['nome_usuario'] ?>
           <i class="fas fa-sign-out-alt ml-1"></i>
           
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
+          <a href="" data-toggle="modal" data-target="#modal-dados" class="dropdown-item">
 
             <!-- Message Start -->
             <div class="media">
@@ -297,3 +295,141 @@ if (@$_GET['acao'] == $item1){
 
 </body>
 </html>
+
+
+
+
+
+
+<?php 
+
+  
+
+//TRAZER OS DADOS DO CLIENTE
+  $cpf_cliente = @$_SESSION['cpf_usuario'];
+  
+
+  $res2 = $pdo->query("SELECT * from usuarios where cpf = '$cpf_cliente'");
+  $dados2 = $res2->fetchAll(PDO::FETCH_ASSOC);
+  $senha = @$dados2[0]['senha'];
+  $usuario = @$dados2[0]['usuario'];
+  $nome = @$dados2[0]['nome'];
+  $telefone = @$dados2[0]['telefone'];  
+ ?>
+
+
+
+  <div class="modal fade" id="modal-dados" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar Dados</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="row">
+              <div class="col-md-4">
+               <div class="form-group">
+                <label class="text-dark" for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome e Sobrenome" required value="<?php echo @$nome ?>">
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+             <div class="form-group">
+              <label class="text-dark" for="exampleInputEmail1">CPF</label>
+              <input type="text" class="form-control form-control-sm" id="cpf" name="cpf" placeholder="CPF" disabled value="<?php echo @$cpf_cliente ?>">
+
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="text-dark" for="exampleInputEmail1">Telefone</label>
+              <input type="text" class="form-control form-control-sm" id="telefone" name="telefone" placeholder="Telefone" required value="<?php echo @$telefone ?>">
+
+            </div>
+
+          </div>
+
+         
+
+      
+         <div class="col-md-3">
+           <div class="form-group">
+            <label class="text-dark" for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="Email" required value="<?php echo @$usuario ?>">
+
+          </div>
+
+        </div>
+
+
+          <div class="col-md-3">
+           <div class="form-group">
+            <label class="text-dark" for="exampleInputEmail1">Senha</label>
+            <input type="password" class="form-control form-control-sm" id="senha" name="senha" placeholder="Senha" required value="<?php echo @$senha ?>">
+
+          </div>
+
+        </div>
+
+        
+
+
+
+      <div align="center" class="" id="mensagem">
+      </div>
+
+
+    </div>
+    <div class="modal-footer">
+     <button type="button" id="btn-fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+     <button name="btn-editar" id="btn-editar" class="btn btn-info">Editar</button>
+
+   </form>
+
+ </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<?php if(isset($_POST['btn-editar'])){
+
+
+
+$cpf = @$_SESSION['cpf_usuario'];
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
+$senha = $_POST['senha'];
+
+
+
+$res = $pdo->prepare("UPDATE usuarios set nome = :nome, usuario = :usuario, senha = :senha, telefone = :telefone where cpf = :cpf");
+
+    $res->bindValue(":nome", $nome);
+    $res->bindValue(":usuario", $email);
+    $res->bindValue(":cpf", $cpf);
+    $res->bindValue(":senha", $senha);
+   
+    $res->bindValue(":telefone", $telefone);
+
+    $res->execute();
+    
+
+
+   
+
+    echo "<script language='javascript'>window.location='index.php'; </script>";
+
+
+} ?>
