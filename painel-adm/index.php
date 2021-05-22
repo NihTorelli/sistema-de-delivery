@@ -12,6 +12,7 @@ $item1 = 'home';
 $item2 = 'produtos';
 $item3 = 'categorias';
 $item4 = 'locais';
+$item5 = 'config';
 
 //CLASSE PARA OS ITENS ATIVOS
 if (@$_GET['acao'] == $item1){
@@ -22,6 +23,8 @@ if (@$_GET['acao'] == $item1){
   $item3ativo = 'active';
 }else if (@$_GET['acao'] == $item4){
   $item4ativo = 'active';
+}else if (@$_GET['acao'] == $item5){
+  $item5ativo = 'active';
 }
 
 
@@ -221,6 +224,16 @@ if (@$_GET['acao'] == $item1){
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="index.php?acao=<?php echo $item5 ?>" class="nav-link <?php echo $item5ativo ?>">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Configurações
+                
+              </p>
+            </a>
+          </li>
+
 
 
          
@@ -261,7 +274,9 @@ if (@$_GET['acao'] == $item1){
       include_once($item3.'.php');
     }else if (@$_GET['acao'] == $item4){
       include_once($item4.'.php');
-    }  
+    }else if (@$_GET['acao'] == $item5){
+      echo '<script>$("#modal-config").modal("show"); </script>';
+    }
     
 
     else{
@@ -324,6 +339,143 @@ if (@$_GET['acao'] == $item1){
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Editar Dados</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="row">
+              <div class="col-md-4">
+               <div class="form-group">
+                <label class="text-dark" for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome e Sobrenome" required value="<?php echo @$nome ?>">
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+             <div class="form-group">
+              <label class="text-dark" for="exampleInputEmail1">CPF</label>
+              <input type="text" class="form-control form-control-sm" id="cpf" name="cpf" placeholder="CPF" disabled value="<?php echo @$cpf_cliente ?>">
+
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="text-dark" for="exampleInputEmail1">Telefone</label>
+              <input type="text" class="form-control form-control-sm" id="telefone" name="telefone" placeholder="Telefone" required value="<?php echo @$telefone ?>">
+
+            </div>
+
+          </div>
+
+         
+
+      
+         <div class="col-md-3">
+           <div class="form-group">
+            <label class="text-dark" for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="Email" required value="<?php echo @$usuario ?>">
+
+          </div>
+
+        </div>
+
+
+          <div class="col-md-3">
+           <div class="form-group">
+            <label class="text-dark" for="exampleInputEmail1">Senha</label>
+            <input type="password" class="form-control form-control-sm" id="senha" name="senha" placeholder="Senha" required value="<?php echo @$senha ?>">
+
+          </div>
+
+        </div>
+
+        
+
+
+
+      <div align="center" class="" id="mensagem">
+      </div>
+
+
+    </div>
+    <div class="modal-footer">
+     <button type="button" id="btn-fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+     <button name="btn-editar" id="btn-editar" class="btn btn-info">Editar</button>
+
+   </form>
+
+ </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<?php if(isset($_POST['btn-editar'])){
+
+
+
+$cpf = @$_SESSION['cpf_usuario'];
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
+$senha = $_POST['senha'];
+
+
+
+$res = $pdo->prepare("UPDATE usuarios set nome = :nome, usuario = :usuario, senha = :senha, telefone = :telefone where cpf = :cpf");
+
+    $res->bindValue(":nome", $nome);
+    $res->bindValue(":usuario", $email);
+    $res->bindValue(":cpf", $cpf);
+    $res->bindValue(":senha", $senha);
+   
+    $res->bindValue(":telefone", $telefone);
+
+    $res->execute();
+    
+
+
+   
+
+    echo "<script language='javascript'>window.location='index.php'; </script>";
+
+
+} ?>
+
+
+
+
+
+
+<?php 
+
+  
+
+//TRAZER OS DADOS DE CONFIGURAÇÕES
+  $cpf_cliente = @$_SESSION['cpf_usuario'];
+  
+
+  $res2 = $pdo->query("SELECT * from config order by id desc limit 1");
+  $dados2 = $res2->fetchAll(PDO::FETCH_ASSOC);
+  $previsao_minutos = @$dados2[0]['previsao_minutos'];
+  $taxa_entrega = @$dados2[0]['taxa_entrega'];
+
+ ?>
+
+
+
+  <div class="modal fade" id="modal-config" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar Configurações</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
