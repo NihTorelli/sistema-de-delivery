@@ -3,6 +3,7 @@
 @session_start();
 include_once("conexao.php");
 $cpf_usuario = @$_SESSION['cpf_usuario'];
+$hora_atual = date("H:i");
 
 $res = $pdo->query("SELECT * from carrinho where cpf = '$cpf_usuario' and id_venda = 0 order by id asc");
 $dados = $res->fetchAll(PDO::FETCH_ASSOC);
@@ -126,7 +127,7 @@ $pagar = new PagamentoMP;
           <h4 class='total mt-4'>Taxa Entrega R$ <?php echo $taxa_entrega ?></h4>
           </h4>
           <h1> R$ <?php echo $sub_total ?></h1>
-          <p class="text-muted" align="right">Previsão de Entrega: <?php echo date("H:i", strtotime("$hora + $previsao_minutos minutes")); ?></p>    
+          <p class="text-muted" align="right">Previsão de Entrega: <strong><?php echo date("H:i", strtotime("$hora_atual + $previsao_minutos minutes")); ?></strong></p>    
         </div>
       </div>
 
