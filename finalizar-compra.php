@@ -5,6 +5,10 @@ include_once("conexao.php");
 $cpf_usuario = @$_SESSION['cpf_usuario'];
 $hora_atual = date("H:i");
 
+$inicio = strtotime($abertura);
+$final = strtotime($fechamento);
+$atual = strtotime($hora_atual);
+
 $res = $pdo->query("SELECT * from carrinho where cpf = '$cpf_usuario' and id_venda = 0 order by id asc");
 $dados = $res->fetchAll(PDO::FETCH_ASSOC);
 $linhas = count($dados);

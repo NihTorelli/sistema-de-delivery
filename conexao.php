@@ -21,6 +21,9 @@ if($linhas == 0){
 }else{
     $previsao_minutos = @$dados2[0]['previsao_minutos'];
     $taxa_entrega = @$dados2[0]['taxa_entrega'];
+    $abertura = @$dados2[0]['abertura'];
+    $fechamento = @$dados2[0]['fechamento'];
+
 }
 
 ?>

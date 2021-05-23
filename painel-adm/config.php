@@ -28,6 +28,22 @@
 
             </div>
           </div>
+
+          <div class="col-md-12">
+             <div class="form-group">
+              <label class="text-dark" for="exampleInputEmail1">Horário de Abertura:</label>
+              <input type="text" class="form-control form-control-md" id="abertura" name="abertura" placeholder="Abertura" value="<?php echo @$abertura ?>">
+
+            </div>
+          </div>
+
+          <div class="col-md-12">
+             <div class="form-group">
+              <label class="text-dark" for="exampleInputEmail1">Horário de Fechamento:</label>
+              <input type="text" class="form-control form-control-md" id="fechamento" name="fechamento" placeholder="Abertura" value="<?php echo @$fechamento ?>">
+
+            </div>
+          </div>
           
 
         
@@ -64,14 +80,18 @@
 
 $taxa_entrega = $_POST['taxa_entrega'];
 $previsao_minutos = $_POST['previsao_minutos'];
+$abertura = $_POST['abertura'];
+$fechamento = $_POST['fechamento'];
 
 
 
 
-$res = $pdo->prepare("UPDATE config set taxa_entrega = :taxa_entrega, previsao_minutos = :previsao_minutos where id = :id");
+$res = $pdo->prepare("UPDATE config set taxa_entrega = :taxa_entrega, previsao_minutos = :previsao_minutos, abertura = :abertura, fechamento = :fechamento where id = :id");
 
     $res->bindValue(":taxa_entrega", $taxa_entrega);
     $res->bindValue(":previsao_minutos", $previsao_minutos);
+    $res->bindValue(":abertura", $abertura);
+    $res->bindValue(":fechamento", $fechamento);
     $res->bindValue(":id", 1);
     
 
