@@ -167,7 +167,7 @@ include_once("conexao.php");
                   <div class="rd-navbar-project-content rd-navbar-modern-project-content">
                     <div>
                       <p>Siga-nos em nossas redes sociais e fique por dentro das promoções, participe para ganhar prêmios e grandes descontos!!</p>
-                                            
+                      <p>Atendemos todos os dias das <?= date('H:i', strtotime($abertura)) ?> até às <?= date('H:i', strtotime($fechamento)) ?> </p>                     
                       
                       <ul class="rd-navbar-modern-contacts">
                         <li>
@@ -186,8 +186,8 @@ include_once("conexao.php");
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
                             <div class="unit-body"><a class="link-email" href="mailto:#">nicolas.torelli@fatec.sp.gov.br</a></div>
-                          </div>
-                        </li>
+                          </div>                          
+                        </li>                        
                       </ul>
                       <ul class="list-inline rd-navbar-modern-list-social">
                         <li><a target="_blank" title="Ir para nossa página no Facebook" class="icon fa fa-facebook" href="https://www.facebook.com/nicolas.torelli.7503/"></a></li>

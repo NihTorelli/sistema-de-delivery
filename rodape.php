@@ -18,7 +18,7 @@
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon fa fa-clock-o"></span></div>
                           <div class="unit-body">
-                            <p>Seg á Sab: 11h ás 22h</p>
+                            <p>Atendemos todos os dias das <?= date('H:i', strtotime($abertura)) ?> até às <?= date('H:i', strtotime($fechamento)) ?></p>
                           </div>
                         </div>
                       </li>

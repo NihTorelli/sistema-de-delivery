@@ -117,7 +117,7 @@ $pagar = new PagamentoMP;
               $valor_final = $total;
 
               //TOTALIZAR COM A ENTREGA
-              $total_final = $valor_final + $taxa_entrega;
+              @$total_final = @$valor_final + @$taxa_entrega;
               $sub_total = $total_final;
 
               $valor = number_format( $valor , 2, ',', '.');
@@ -125,7 +125,7 @@ $pagar = new PagamentoMP;
               $total_item = number_format( $total_item , 2, ',', '.');
               $valor_final = number_format( $valor_final , 2, ',', '.');
               $sub_total = number_format( $sub_total , 2, ',', '.');
-              $taxa_entrega = number_format( $taxa_entrega , 2, ',', '.');
+              @$taxa_entrega = number_format( @$taxa_entrega , 2, ',', '.');
               ?>
 
               <li><img src='images/produtos/<?php echo $imagem ?>'><h4><?php echo $quantidade; echo ' - '; echo $nome_produto; ?></h4><h5><?php echo $total_item ?></h5></li>

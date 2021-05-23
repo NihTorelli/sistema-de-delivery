@@ -79,7 +79,7 @@ echo '
 			
 			<td>'.$hora.'</td>
 			<td>'.date("H:i", strtotime("$hora + $previsao_minutos minutes")).'</td>
-			<td>'.$total.'</td>
+			<td>R$ '.$total.'</td>
 			<td>'.$tipo_pgto.'</td>
 			<td>'.$status.'</td>
 			<td>'.$pago.'</td>		
