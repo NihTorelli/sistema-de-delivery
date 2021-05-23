@@ -43,7 +43,7 @@
     </div>
     <div class="modal-footer">
      <button type="button" id="btn-fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-     <button name="btn-editar" id="btn-editar" class="btn btn-info">Editar</button>
+     <button name="btn-config" id="btn-config" class="btn btn-info">Editar</button>
 
    </form>
 
@@ -58,7 +58,7 @@
 
 
 
-<?php if(isset($_POST['btn-editar'])){
+<?php if(isset($_POST['btn-config'])){
 
 
 

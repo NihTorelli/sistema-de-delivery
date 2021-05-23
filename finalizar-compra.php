@@ -4,6 +4,17 @@
 include_once("conexao.php");
 $cpf_usuario = @$_SESSION['cpf_usuario'];
 
+$res = $pdo->query("SELECT * from carrinho where cpf = '$cpf_usuario' and id_venda = 0 order by id asc");
+$dados = $res->fetchAll(PDO::FETCH_ASSOC);
+$linhas = count($dados);
+
+if($linhas == 0){
+  $linhas = 0;
+  $total = 0;
+  $valor_final = 0;
+  echo "<script language='javascript'>window.location='produtos'; </script>";
+}
+
 
 //includes para o mercado pago
 include_once("mercadopago/lib/mercadopago.php");
@@ -69,16 +80,7 @@ $pagar = new PagamentoMP;
 
             <?php 
 
-            $res = $pdo->query("SELECT * from carrinho where cpf = '$cpf_usuario' and id_venda = 0 order by id asc");
-            $dados = $res->fetchAll(PDO::FETCH_ASSOC);
-            $linhas = count($dados);
-
-            if($linhas == 0){
-              $linhas = 0;
-              $total = 0;
-              $valor_final = 0;
-              echo "<script language='javascript'>window.location='produtos'; </script>";
-            }
+            
 
             $total;
             for ($i=0; $i < count($dados); $i++) { 
