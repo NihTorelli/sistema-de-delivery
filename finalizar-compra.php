@@ -103,10 +103,16 @@ $pagar = new PagamentoMP;
               @$total = @$total + $total_item;
               $valor_final = $total;
 
+              //TOTALIZAR COM A ENTREGA
+              $total_final = $valor_final + $taxa_entrega;
+              $sub_total = $total_final;
+
               $valor = number_format( $valor , 2, ',', '.');
                             //$total = number_format( $total , 2, ',', '.');
               $total_item = number_format( $total_item , 2, ',', '.');
               $valor_final = number_format( $valor_final , 2, ',', '.');
+              $sub_total = number_format( $sub_total , 2, ',', '.');
+              $taxa_entrega = number_format( $taxa_entrega , 2, ',', '.');
               ?>
 
               <li><img src='images/produtos/<?php echo $imagem ?>'><h4><?php echo $quantidade; echo ' - '; echo $nome_produto; ?></h4><h5><?php echo $total_item ?></h5></li>
@@ -116,7 +122,11 @@ $pagar = new PagamentoMP;
 
           </ul>
 
-          <h5 class='total mt-4'>Total</h5><h1>R$ <?php echo $valor_final ?></h1>
+          <h4 class='total mt-4'>Total R$ <?php echo $valor_final ?>
+          <h4 class='total mt-4'>Taxa Entrega R$ <?php echo $taxa_entrega ?></h4>
+          </h4>
+          <h1> R$ <?php echo $sub_total ?></h1>
+          <p class="text-muted" align="right">Previsão de Entrega: <?php echo date("H:i", strtotime("$hora + $previsao_minutos minutes")); ?></p>    
         </div>
       </div>
 
