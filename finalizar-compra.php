@@ -9,6 +9,14 @@ $inicio = strtotime($abertura);
 $final = strtotime($fechamento);
 $atual = strtotime($hora_atual);
 
+if ($atual >= $inicio && $atual <= $final){
+  
+}else{
+  echo "<script language='javascript'>window.alert('Nosso Delivery só atende das $abertura às $fechamento !!'); </script>";
+  echo "<script language='javascript'>window.alert('Nosso Delivery só atende das $abertura às $fechamento !!'); </script>";
+  
+}
+
 $res = $pdo->query("SELECT * from carrinho where cpf = '$cpf_usuario' and id_venda = 0 order by id asc");
 $dados = $res->fetchAll(PDO::FETCH_ASSOC);
 $linhas = count($dados);

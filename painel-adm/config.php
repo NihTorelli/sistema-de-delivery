@@ -31,7 +31,7 @@
 
           <div class="col-md-12">
              <div class="form-group">
-              <label class="text-dark" for="exampleInputEmail1">Horário de Abertura:</label>
+              <label class="text-dark" for="exampleInputEmail1">Horário de Abertura: (A partir de 00:00)</label>
               <input type="text" class="form-control form-control-md" id="abertura" name="abertura" placeholder="Abertura" value="<?php echo @$abertura ?>">
 
             </div>
@@ -39,7 +39,7 @@
 
           <div class="col-md-12">
              <div class="form-group">
-              <label class="text-dark" for="exampleInputEmail1">Horário de Fechamento:</label>
+              <label class="text-dark" for="exampleInputEmail1">Horário de Fechamento: (Até às 23:59)</label>
               <input type="text" class="form-control form-control-md" id="fechamento" name="fechamento" placeholder="Abertura" value="<?php echo @$fechamento ?>">
 
             </div>
