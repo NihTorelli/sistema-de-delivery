@@ -102,6 +102,22 @@ $itens_pag = intval(@$_GET['itens']);
 						<input type="text" class="form-control" id="telefone" placeholder="Insira o Telefone " name="telefone" value="<?php echo @$telefone ?>" required>
 					</div>
 
+
+					<div class="form-group">
+
+
+						<label for="exampleFormControlInput1">Usuário</label>
+						<input type="email" class="form-control" id="usuario" placeholder="Insira o Email " name="usuario" value="<?php echo @$usuario ?>" required>
+					</div>
+
+
+					<div class="form-group">
+
+
+						<label for="exampleFormControlInput1">Senha</label>
+						<input type="password" class="form-control" id="senha" placeholder="Insira a Senha" name="senha" value="<?php echo @$senha ?>" required>
+					</div>
+
 				
 
 

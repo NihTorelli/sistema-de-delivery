@@ -12,7 +12,8 @@ $item1 = 'home';
 $item2 = 'produtos';
 $item3 = 'categorias';
 $item4 = 'locais';
-$item5 = 'config';
+$item5 = 'balconistas';
+$item6 = 'config';
 
 //CLASSE PARA OS ITENS ATIVOS
 if (@$_GET['acao'] == $item1){
@@ -25,6 +26,8 @@ if (@$_GET['acao'] == $item1){
   $item4ativo = 'active';
 }else if (@$_GET['acao'] == $item5){
   $item5ativo = 'active';
+}else if (@$_GET['acao'] == $item6){
+  $item6ativo = 'active';
 }
 
 
@@ -98,6 +101,10 @@ if (@$_GET['acao'] == $item1){
 
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php?acao=<?php echo $item4 ?>" class="nav-link <?php echo $item4ativo ?>">Locais</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php?acao=<?php echo $item5 ?>" class="nav-link <?php echo $item5ativo ?>">Balconistas</a>
       </li>
 
     </ul>
@@ -226,6 +233,16 @@ if (@$_GET['acao'] == $item1){
 
           <li class="nav-item">
             <a href="index.php?acao=<?php echo $item5 ?>" class="nav-link <?php echo $item5ativo ?>">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Balconistas
+                
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="index.php?acao=<?php echo $item6 ?>" class="nav-link <?php echo $item6ativo ?>">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 Configurações
@@ -276,6 +293,8 @@ if (@$_GET['acao'] == $item1){
       include_once($item4.'.php');
     }else if (@$_GET['acao'] == $item5){
       include_once($item5.'.php');
+    }else if (@$_GET['acao'] == $item6){
+      include_once($item6.'.php');
     }
     
 

@@ -1,7 +1,7 @@
 <?php 
 
 require_once("../../conexao.php");
-$pagina = 'locais';
+$pagina = 'balconistas';
 
 $txtbuscar = @$_POST['txtbuscar'];
 
@@ -12,6 +12,10 @@ echo '
 	<thead class="thead-light">
 		<tr>
 			<th scope="col">Nome</th>
+			<th scope="col">CPF</th>
+			<th scope="col">Telefone</th>
+			<th scope="col">E-mail</th>
+			<th scope="col">Senha</th>
 			
 			
 			<th scope="col">Ações</th>
@@ -35,10 +39,10 @@ echo '
 		$caminho_pag = 'index.php?acao='.$pagina.'&';
 
 	if($txtbuscar == ''){
-		$res = $pdo->query("SELECT * from locais order by nome asc LIMIT $limite, $itens_por_pagina");
+		$res = $pdo->query("SELECT * from usuarios where nivel = 'Balconista' order by nome asc LIMIT $limite, $itens_por_pagina");
 	}else{
 		$txtbuscar = '%'.@$_POST['txtbuscar'].'%';
-		$res = $pdo->query("SELECT * from locais where nome LIKE '$txtbuscar' order by nome asc");
+		$res = $pdo->query("SELECT * from usuarios where nivel = 'Balconista' and (nome LIKE '$txtbuscar' or cpf LIKE '$txtbuscar') order by nome asc");
 
 	}
 	
@@ -46,7 +50,7 @@ echo '
 
 
 		//TOTALIZAR OS REGISTROS PARA PAGINAÇÃO
-		$res_todos = $pdo->query("SELECT * from locais");
+		$res_todos = $pdo->query("SELECT * from usuarios where nivel = 'Balconista'");
 		$dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
 		$num_total = count($dados_total);
 
@@ -58,8 +62,13 @@ echo '
 			foreach ($dados[$i] as $key => $value) {
 			}
 
-			$id = $dados[$i]['id'];	
-			$nome = $dados[$i]['nome'];
+			$id = $dados[$i]['id'];
+			$nome = $dados[$i]['nome'];	
+			$cpf = $dados[$i]['cpf'];
+			$telefone = $dados[$i]['telefone'];
+			$usuario = $dados[$i]['usuario'];
+			$senha = $dados[$i]['senha'];
+			
 			
 		
 
@@ -70,6 +79,10 @@ echo '
 
 			
 			<td>'.$nome.'</td>
+			<td>'.$cpf.'</td>
+			<td>'.$telefone.'</td>
+			<td>'.$usuario.'</td>
+			<td>'.$senha.'</td>
 			
 			
 			
