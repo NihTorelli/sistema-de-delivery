@@ -8,10 +8,30 @@ $agora = date('Y-m-d');
 
 ?>
 <div class="container ml-2 mr-2">
-	<form method="post" id="frm">
-		<input type="hidden" name="pag" id="pag" value="<?php echo $pagina_pag ?>">
-		<input type="hidden" name="itens_pag" id="itens_pag" value="<?php echo $itens_pag ?>">
-	</form>
+<nav class="navbar navbar-expand mb-4">
+		
+				
+		<form method="post" id="frm">
+			<input type="hidden" name="pag" id="pag" value="<?php echo $pagina_pag ?>">
+			<input type="hidden" name="itens_pag" id="itens_pag" value="<?php echo $itens_pag ?>">
+		</form>
+		
+
+		<div class="direita">
+			<!-- SEARCH FORM -->
+			<form class="form-inline ml-3 float-right">
+				<div class="input-group input-group-sm">
+					<input class="form-control form-control-navbar" type="date" name="txtbuscar" id="txtbuscar" placeholder="Buscar" aria-label="Search">
+					<div class="input-group-append">
+						<button class="btn btn-navbar" type="submit" id="btn-buscar">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</nav>
 
 
 	<div id="listar">

@@ -3,6 +3,8 @@
 require_once("../../conexao.php");
 $pagina = 'pedidos';
 
+$txtbuscar = @$_POST['txtbuscar'];
+
 
 
 
@@ -37,7 +39,11 @@ echo '
 		$caminho_pag = 'index.php?acao='.$pagina.'&';
 
 	
-		$res = $pdo->query("SELECT * from vendas where cliente = '$cpf_cliente' order by id desc LIMIT $limite, $itens_por_pagina");
+		if($txtbuscar == ''){
+			$res = $pdo->query("SELECT * from vendas where data = curDate() and pago != 'Sim' order by id desc LIMIT $limite, $itens_por_pagina");
+		}else{
+			$res = $pdo->query("SELECT * from vendas where data = '$txtbuscar' and pago != 'Sim' order by id desc ");
+		}
 	
 	
 		$dados = $res->fetchAll(PDO::FETCH_ASSOC);
@@ -62,6 +68,7 @@ echo '
 			$tipo_pgto = $dados[$i]['tipo_pgto'];
 			$status = $dados[$i]['status'];
 			$pago = $dados[$i]['pago'];
+			$troco = $dados[$i]['troco'];
 			
 
 			if ($status == 'Iniciado'){
@@ -69,7 +76,9 @@ echo '
 			}else if($status == 'Preparando'){
 				$classe = 'bg-primary';
 			}else if($status == 'Despachado'){
-				$classe = 'bg-warning';
+				$classe = 'bg-warning';				
+			}else if($status == 'Concluído'){
+				$classe = 'bg-success';
 			}else{
 				$classe = '';
 			}
@@ -82,14 +91,13 @@ echo '
 
 			
 			<td>'.$hora.'</td>
-			<td>'.date("H:i", strtotime("$hora + $previsao_minutos minutes")).'</td>
-			<td>R$ '.$total.'</td>
 			<td>'.$tipo_pgto.'</td>
 			<td>'.$status.'</td>
+			<td>'.$troco.'</td>			
 			<td>'.$pago.'</td>
 			<td>
 				<a href="" onclick="produtosModal('.$id.')" data-toggle="modal" data-target="#modal-produtos">
-				<i class="fas fa-box-open '.$classe.' ml-4"></i></a>
+				<i class="fas fa-box-open '.$classe.'"></i></a>
 			</td>			
 		</tr>';
 
