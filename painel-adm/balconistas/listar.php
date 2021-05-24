@@ -1,24 +1,20 @@
 <?php 
 
 require_once("../../conexao.php");
-$pagina = 'pedidos';
+$pagina = 'locais';
 
+$txtbuscar = @$_POST['txtbuscar'];
 
-@session_start();
-$cpf_cliente = @$_SESSION['cpf_usuario'];
 
 echo '
 <div class="table-responsive">
-<table class="table table-sm mt-3">
+<table class="table table-sm mt-3 tabelas">
 	<thead class="thead-light">
 		<tr>
-			<th scope="col">Hora</th>
-			<th scope="col">Previsão de Entrega</th>
-			<th scope="col">Total</th>
-			<th scope="col">Tipo PGTO</th>
-			<th scope="col">Status</th>
-			<th scope="col">Pago</th>
-			<th scope="col">Produtos</th>		
+			<th scope="col">Nome</th>
+			
+			
+			<th scope="col">Ações</th>
 		</tr>
 	</thead>
 	<tbody>';
@@ -38,15 +34,19 @@ echo '
 		//CAMINHO DA PAGINAÇÃO
 		$caminho_pag = 'index.php?acao='.$pagina.'&';
 
+	if($txtbuscar == ''){
+		$res = $pdo->query("SELECT * from locais order by nome asc LIMIT $limite, $itens_por_pagina");
+	}else{
+		$txtbuscar = '%'.@$_POST['txtbuscar'].'%';
+		$res = $pdo->query("SELECT * from locais where nome LIKE '$txtbuscar' order by nome asc");
+
+	}
 	
-		$res = $pdo->query("SELECT * from vendas where cliente = '$cpf_cliente' order by id desc LIMIT $limite, $itens_por_pagina");
-	
-	
-		$dados = $res->fetchAll(PDO::FETCH_ASSOC);
+	$dados = $res->fetchAll(PDO::FETCH_ASSOC);
 
 
 		//TOTALIZAR OS REGISTROS PARA PAGINAÇÃO
-		$res_todos = $pdo->query("SELECT * from vendas");
+		$res_todos = $pdo->query("SELECT * from locais");
 		$dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
 		$num_total = count($dados_total);
 
@@ -59,40 +59,24 @@ echo '
 			}
 
 			$id = $dados[$i]['id'];	
-			$hora = $dados[$i]['hora'];
-			$total = $dados[$i]['total'];
-			$tipo_pgto = $dados[$i]['tipo_pgto'];
-			$status = $dados[$i]['status'];
-			$pago = $dados[$i]['pago'];
+			$nome = $dados[$i]['nome'];
 			
-
-			if ($status == 'Iniciado'){
-				$classe = 'bg-info';
-			}else if($status == 'Preparando'){
-				$classe = 'bg-primary';
-			}else if($status == 'Despachado'){
-				$classe = 'bg-warning';
-			}else{
-				$classe = '';
-			}
 		
 
 			
 
 echo '
-		<tr class="'.$classe.'">
+		<tr>
 
 			
-			<td>'.$hora.'</td>
-			<td>'.date("H:i", strtotime("$hora + $previsao_minutos minutes")).'</td>
-			<td>R$ '.$total.'</td>
-			<td>'.$tipo_pgto.'</td>
-			<td>'.$status.'</td>
-			<td>'.$pago.'</td>
+			<td>'.$nome.'</td>
+			
+			
+			
 			<td>
-				<a href="" onclick="produtosModal('.$id.')" data-toggle="modal" data-target="#modal-produtos">
-				<i class="fas fa-box-open '.$classe.' ml-4"></i></a>
-			</td>			
+				<a href="index.php?acao='.$pagina.'&funcao=editar&id='.$id.'"><i class="fas fa-edit text-info"></i></a>
+				<a href="index.php?acao='.$pagina.'&funcao=excluir&id='.$id.'"><i class="far fa-trash-alt text-danger"></i></a>
+			</td>
 		</tr>';
 
 	}
@@ -103,7 +87,7 @@ echo  '
 </div> ';
 
 
-
+if($txtbuscar == ''){
 
 
 echo '
@@ -163,6 +147,7 @@ echo '
 
 ';
 
+}
 
 
 ?>
