@@ -13,7 +13,7 @@ if ($atual >= $inicio && $atual <= $final){
   
 }else{
   echo "<script language='javascript'>window.alert('Nosso Delivery só atende das $abertura às $fechamento !!'); </script>";
-  echo "<script language='javascript'>window.alert('Nosso Delivery só atende das $abertura às $fechamento !!'); </script>";
+  echo "<script language='javascript'>window.location='produtos.php'; </script>";
   
 }
 

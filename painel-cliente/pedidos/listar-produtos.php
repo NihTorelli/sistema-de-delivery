@@ -1,3 +1,84 @@
+<style type="text/css">
+	
+
+
+/*--------------------
+Checkout
+---------------------*/
+
+
+.order {
+  width: 430px;
+  height: 500px;
+  padding: 0 30px;
+  
+  background-color: #FFF;
+  
+  
+  -webkit-box-shadow: 0 15px 24px rgba(37,44,65,0.16);
+     -moz-box-shadow: 0 15px 24px rgba(37,44,65,0.16);
+          box-shadow: 0 15px 24px rgba(37,44,65,0.16);
+}
+
+ul.order-list {
+  width: 100%;
+  height: 400px;
+  list-style: none;
+  overflow-y: scroll;
+  padding-right: 12px;
+}
+
+ul.order-list li {
+  height: 80px;
+  margin-left: -40px;
+  overflow: hidden;
+  border-bottom: 1px solid #e9ebf2;
+}
+
+ul.order-list li > img {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin-left:40px;
+}
+
+ul.order-list li > h4 {
+  margin-top: 16px;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-align: right;
+  
+  -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+ul.order-list li:hover > h4 {
+  margin-top: 8px;
+}
+
+ul.order-list li > h5 {
+  margin-top: 0px;
+  text-align: right;
+  display: none;
+  
+  -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+}
+
+ul.order-list li:hover > h5 {
+  margin-top: 3px;
+  display: block; 
+}
+
+
+</style>
+
 <?php 
 
 require_once("../../conexao.php");
@@ -10,7 +91,7 @@ $id_venda = $_POST['id'];
 
 echo '
 <div class="order">
-          <h2>Carrinho</h2>
+          
 
           <ul class="order-list mt-4">';
 
@@ -39,7 +120,9 @@ echo '
 
               echo '
 
-              <li><img src="images/produtos/<?php echo $imagem ?>"><h4>'.$quantidade.' - ' .$nome_produto.'</h4><h5>'.$total_item.'</h5></li>';
+              <li><img src="../images/produtos/'.$imagem.'" width="30">
+              <h4>'.$quantidade.' - ' .$nome_produto.'</h4><h5>'.$total_item .'</h5></li>';
+
 
 
              } 
