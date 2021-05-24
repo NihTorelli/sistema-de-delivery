@@ -15,7 +15,7 @@ echo '
 			<th scope="col">CPF</th>
 			<th scope="col">Telefone</th>
 			<th scope="col">E-mail</th>
-			<th scope="col">Senha</th>
+			
 			
 			
 			<th scope="col">Ações</th>
@@ -67,7 +67,7 @@ echo '
 			$cpf = $dados[$i]['cpf'];
 			$telefone = $dados[$i]['telefone'];
 			$usuario = $dados[$i]['usuario'];
-			$senha = $dados[$i]['senha'];
+			
 			
 			
 		
@@ -82,7 +82,7 @@ echo '
 			<td>'.$cpf.'</td>
 			<td>'.$telefone.'</td>
 			<td>'.$usuario.'</td>
-			<td>'.$senha.'</td>
+			
 			
 			
 			

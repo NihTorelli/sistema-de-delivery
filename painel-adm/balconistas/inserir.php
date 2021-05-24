@@ -9,7 +9,7 @@ $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 $usuario = $_POST['usuario'];
 $cpf_sem_traco = preg_replace('/[^0-9]/', '', $cpf);
-$senha = $_POST['senha'];
+
 
 
 
@@ -33,10 +33,7 @@ if($usuario == ''){
 	exit();
 }
 
-if($senha == ''){
-	echo "Preencha a Senha!";
-	exit();
-}
+
 
 
 
@@ -58,7 +55,7 @@ if($senha == ''){
 	$res->bindValue(":cpf", $cpf);
 	$res->bindValue(":telefone", $telefone);
 	$res->bindValue(":usuario", $usuario);
-	$res->bindValue(":senha", md5($senha));
+	$res->bindValue(":senha", md5($cpf_sem_traco));
 	$res->bindValue(":nivel", 'Balconista');
 
 	

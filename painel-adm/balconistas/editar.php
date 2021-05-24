@@ -11,7 +11,7 @@ $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 $usuario = $_POST['usuario'];
 $cpf_sem_traco = preg_replace('/[^0-9]/', '', $cpf);
-$senha = $_POST['senha'];
+
 
 
 
@@ -36,13 +36,10 @@ if($usuario == ''){
 	exit();
 }
 
-if($senha == ''){
-	echo "Preencha a Senha!";
-	exit();
-}
 
 
-if($reg_antigo != $nome){
+
+if($reg_antigo != $cpf){
 	//verificar duplicidade de dados
 	$res = $pdo->query("SELECT * from usuarios where cpf = '$cpf'");
 	$dados = $res->fetchAll(PDO::FETCH_ASSOC);
@@ -54,7 +51,7 @@ if($reg_antigo != $nome){
 }
 
 
- 	$res = $pdo->prepare("UPDATE usuarios SET nome = :nome, cpf = :cpf, telefone = :telefone, usuario = :usuario, senha = :senha where id = :id");
+ 	$res = $pdo->prepare("UPDATE usuarios SET nome = :nome, cpf = :cpf, telefone = :telefone, usuario = :usuario where id = :id");
  
 
 	
@@ -62,7 +59,7 @@ if($reg_antigo != $nome){
 	$res->bindValue(":cpf", $cpf);
 	$res->bindValue(":telefone", $telefone);
 	$res->bindValue(":usuario", $usuario);
-	$res->bindValue(":senha", md5($senha));
+	
 	$res->bindValue(":id", $id);
 	
 	$res->execute();
