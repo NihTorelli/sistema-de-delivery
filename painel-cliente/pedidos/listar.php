@@ -69,12 +69,22 @@ echo '
 			$status = $dados[$i]['status'];
 			$pago = $dados[$i]['pago'];
 			
+
+			if ($status == 'Iniciado'){
+				$classe = 'bg-info';
+			}else if($status == 'Preparando'){
+				$classe = 'bg-primary';
+			}else if($status == 'Despachado'){
+				$classe = 'bg-warning';
+			}else{
+				$classe = '';
+			}
 		
 
 			
 
 echo '
-		<tr>
+		<tr class="'.$classe.'">
 
 			
 			<td>'.$hora.'</td>
