@@ -14,10 +14,7 @@ $item1 = 'pedidos';
 
 
 
-//CLASSE PARA OS ITENS ATIVOS
-if(@$_GET['acao'] == $item1){
-          $item1ativo = 'active';
-        }
+
 
  ?>
 
@@ -168,7 +165,7 @@ if(@$_GET['acao'] == $item1){
                with font-awesome or any other icon font library -->
          
           <li class="nav-item ">
-            <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link <?php echo $item1ativo ?>">
+            <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Pedidos
@@ -263,16 +260,16 @@ if(@$_GET['acao'] == $item1){
 
   
 
- 
+$cpf_usuario = @$_SESSION['cpf_usuario'];
   
 
 
-  $res2 = $pdo->query("SELECT * from usuarios where cpf = '$cpf_cliente'");
+  $res2 = $pdo->query("SELECT * from usuarios where cpf = '$cpf_usuario'");
   $dados2 = $res2->fetchAll(PDO::FETCH_ASSOC);
   $senha = @$dados2[0]['senha'];
   $nome = @$dados2[0]['nome'];
   $telefone = @$dados2[0]['telefone'];
-  $email = @$dados2[0]['email'];
+  $email = @$dados2[0]['usuario'];
  ?>
 
 
@@ -300,7 +297,7 @@ if(@$_GET['acao'] == $item1){
             <div class="col-md-4">
              <div class="form-group">
               <label class="text-dark" for="exampleInputEmail1">CPF</label>
-              <input type="text" class="form-control form-control-sm" id="cpf" name="cpf" placeholder="CPF" disabled value="<?php echo @$cpf_cliente ?>">
+              <input type="text" class="form-control form-control-sm" id="cpf" name="cpf" placeholder="CPF" disabled value="<?php echo @$cpf_usuario ?>">
 
             </div>
           </div>
@@ -334,111 +331,7 @@ if(@$_GET['acao'] == $item1){
 
           </div>
 
-        </div>
-
-        <div class="col-md-4">
-           <div class="form-group">
-            <label class="text-dark" for="exampleInputEmail1">Rua</label>
-            <input type="text" class="form-control form-control-sm" id="rua" name="rua" placeholder="Rua" required value="<?php echo @$rua ?>">
-
-          </div>
-
-        </div>
-
-
-          <div class="col-md-2">
-           <div class="form-group">
-            <label class="text-dark" for="exampleInputEmail1">Número</label>
-            <input type="text" class="form-control form-control-sm" id="numero" name="numero" placeholder="Número" required value="<?php echo @$numero ?>">
-
-          </div>
-
-        </div>
-
-          <div class="col-md-3">
-           <div class="form-group">
-            <label class="text-dark" for="exampleInputEmail1">Bairro</label>
-            
-            <select class="form-control form-control-sm" id="" name="bairro" required>
-
-
-
-                <?php 
-                //SE EXISTIR EDIÇÃO DOS DADOS, TRAZER O NOME DO ITEM ASSOCIADA AO REGISTRO
-                if(@$bairro != ''){
-
-                 
-                  echo '<option value="'.@$bairro.'">'.@$bairro.'</option>';
-                }else{
-                   echo '<option value="">Selecione um Bairro</option>';
-                }
-                
-
-
-                //TRAZER TODOS OS REGISTROS EXISTENTES
-                $res = $pdo->query("SELECT * from locais order by nome asc");
-                $dados = $res->fetchAll(PDO::FETCH_ASSOC);
-
-                for ($i=0; $i < count($dados); $i++) { 
-                  foreach ($dados[$i] as $key => $value) {
-                  }
-
-                  $id_item = $dados[$i]['id'];  
-                  $nome_item = $dados[$i]['nome'];
-
-                  if($nome_dado != $nome_item){
-                    echo '<option value="'.$nome_item.'">'.$nome_item.'</option>';
-                  }
-
-                  
-                }
-                ?>
-              </select>
-
-          </div>
-
-        </div>
-
-         <div class="col-md-4">
-           <div class="form-group">
-            <label class="text-dark" for="exampleInputEmail1">Cidade</label>
-            <input type="text" class="form-control form-control-sm" id="cidade" name="cidade" placeholder="Cidade" required value="<?php echo @$cidade ?>">
-
-          </div>
-
-        </div>
-
-
-          <div class="col-md-2">
-           <div class="form-group">
-            <label class="text-dark" for="exampleInputEmail1">Estado</label>
-           
-            <select id="estado" name="estado" class="form-control form-control-sm">
-
-        
-      
-         <option value="SP" <?php if($estado == 'SP'){ ?> selected <?php } ?>>SP</option>
-        
-
-      </select>
-
-          </div>
-
-        </div>
-
-
-         <div class="col-md-3">
-           <div class="form-group">
-            <label class="text-dark" for="exampleInputEmail1">CEP</label>
-            <input type="text" class="form-control form-control-sm" id="cep" name="cep" placeholder="CEP" required value="<?php echo @$cep ?>">
-
-          </div>
-
-        </div>
-
-
-
-      </div>
+        </div>       
 
 
 

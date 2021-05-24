@@ -4,21 +4,19 @@ require_once("../../conexao.php");
 $pagina = 'pedidos';
 
 
-@session_start();
-$cpf_cliente = @$_SESSION['cpf_usuario'];
+
 
 echo '
 <div class="table-responsive">
 <table class="table table-sm mt-3">
 	<thead class="thead-light">
 		<tr>
-			<th scope="col">Hora</th>
-			<th scope="col">Previsão de Entrega</th>
-			<th scope="col">Total</th>
+			<th scope="col">Hora</th>			
 			<th scope="col">Tipo PGTO</th>
 			<th scope="col">Status</th>
-			<th scope="col">Pago</th>
-			<th scope="col">Produtos</th>		
+			<th scope="col">Troco</th>
+			<th scope="col">Pago</th>			
+			<th scope="col">Ações</th>	
 		</tr>
 	</thead>
 	<tbody>';
