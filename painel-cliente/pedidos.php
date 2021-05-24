@@ -88,6 +88,30 @@ $agora = date('Y-m-d');
 
 
 
+<!--MODAL PARA MOSTRAR A DESCRIÇÃO DO PRODUTO -->
+
+<div class="modal fade" id="modal-produtos" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Produtos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                 
+                    <span id="id"></span>
+
+                  </div>
+                  
+               </div>
+             </div>
+           </div>
+
+
+
+
 <script>
 function produtosModal(id) {
 	$("#id").text(id);

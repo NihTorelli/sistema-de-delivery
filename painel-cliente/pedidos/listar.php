@@ -19,11 +19,7 @@ echo '
 			<th scope="col">Tipo PGTO</th>
 			<th scope="col">Status</th>
 			<th scope="col">Pago</th>
-			<th scope="col">Produtos</th>
-
-			
-			
-			
+			<th scope="col">Produtos</th>		
 		</tr>
 	</thead>
 	<tbody>';
@@ -95,12 +91,9 @@ echo '
 			<td>'.$status.'</td>
 			<td>'.$pago.'</td>
 			<td>
-				<a href="" onclick="produtosModal('.$id.')">
-				<i class="fas fa-box-full text-info"></i></a>
-			</td>		
-			
-			
-			
+				<a href="" onclick="produtosModal('.$id.')" data-toggle="modal" data-target="#modal-produtos">
+				<i class="fas fa-box-open '.$classe.' ml-4"></i></a>
+			</td>			
 		</tr>';
 
 	}
