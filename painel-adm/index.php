@@ -340,15 +340,15 @@ if (@$_GET['acao'] == $item1){
   
 
 //TRAZER OS DADOS DO CLIENTE
-  $cpf_cliente = @$_SESSION['cpf_usuario'];
+  $cpf_cliente_u = @$_SESSION['cpf_usuario'];
   
 
-  $res2 = $pdo->query("SELECT * from usuarios where cpf = '$cpf_cliente'");
+  $res2 = $pdo->query("SELECT * from usuarios where cpf = '$cpf_cliente_u'");
   $dados2 = $res2->fetchAll(PDO::FETCH_ASSOC);
-  $senha = @$dados2[0]['senha'];
-  $usuario = @$dados2[0]['usuario'];
-  $nome = @$dados2[0]['nome'];
-  $telefone = @$dados2[0]['telefone'];  
+  $senha_u = @$dados2[0]['senha'];
+  $usuario_u = @$dados2[0]['usuario'];
+  $nome_u = @$dados2[0]['nome'];
+  $telefone_u = @$dados2[0]['telefone'];  
  ?>
 
 
@@ -368,7 +368,7 @@ if (@$_GET['acao'] == $item1){
               <div class="col-md-4">
                <div class="form-group">
                 <label class="text-dark" for="exampleInputEmail1">Nome</label>
-                <input type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Nome e Sobrenome" required value="<?php echo @$nome ?>">
+                <input type="text" class="form-control form-control-sm" id="nome_u" name="nome_u" placeholder="Nome e Sobrenome" required value="<?php echo @$nome_u ?>">
 
               </div>
             </div>
@@ -376,7 +376,7 @@ if (@$_GET['acao'] == $item1){
             <div class="col-md-4">
              <div class="form-group">
               <label class="text-dark" for="exampleInputEmail1">CPF</label>
-              <input type="text" class="form-control form-control-sm" id="cpf" name="cpf" placeholder="CPF" disabled value="<?php echo @$cpf_cliente ?>">
+              <input type="text" class="form-control form-control-sm" id="cpf_u" name="cpf_u" placeholder="CPF" disabled value="<?php echo @$cpf_cliente_u ?>">
 
             </div>
           </div>
@@ -384,7 +384,7 @@ if (@$_GET['acao'] == $item1){
           <div class="col-md-4">
             <div class="form-group">
               <label class="text-dark" for="exampleInputEmail1">Telefone</label>
-              <input type="text" class="form-control form-control-sm" id="telefone" name="telefone" placeholder="Telefone" required value="<?php echo @$telefone ?>">
+              <input type="text" class="form-control form-control-sm" id="telefone_u" name="telefone_u" placeholder="Telefone" required value="<?php echo @$telefone_u ?>">
 
             </div>
 
@@ -396,7 +396,7 @@ if (@$_GET['acao'] == $item1){
          <div class="col-md-3">
            <div class="form-group">
             <label class="text-dark" for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="Email" required value="<?php echo @$usuario ?>">
+            <input type="email" class="form-control form-control-sm" id="email_u" name="email_u" placeholder="Email" required value="<?php echo @$usuario_u ?>">
 
           </div>
 
@@ -406,7 +406,7 @@ if (@$_GET['acao'] == $item1){
           <div class="col-md-3">
            <div class="form-group">
             <label class="text-dark" for="exampleInputEmail1">Senha</label>
-            <input type="password" class="form-control form-control-sm" id="senha" name="senha" placeholder="Senha" required value="<?php echo @$senha ?>">
+            <input type="password" class="form-control form-control-sm" id="senha_u" name="senha_u" placeholder="Senha" required value="<?php echo @$senha_u ?>">
 
           </div>
 
@@ -423,7 +423,7 @@ if (@$_GET['acao'] == $item1){
     </div>
     <div class="modal-footer">
      <button type="button" id="btn-fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-     <button name="btn-editar" id="btn-editar-user" class="btn btn-info">Editar</button>
+     <button name="btn-editar-user" id="btn-editar-user" class="btn btn-info">Editar</button>
 
    </form>
 
@@ -441,10 +441,10 @@ if (@$_GET['acao'] == $item1){
 
 
 $cpf_user = @$_SESSION['cpf_usuario'];
-$nome_user = $_POST['nome'];
-$email_user = $_POST['email'];
-$telefone_user = $_POST['telefone'];
-$senha_user = $_POST['senha'];
+$nome_user = $_POST['nome_u'];
+$email_user = $_POST['email_u'];
+$telefone_user = $_POST['telefone_u'];
+$senha_user = $_POST['senha_u'];
 
 
 
