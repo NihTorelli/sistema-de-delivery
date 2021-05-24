@@ -147,7 +147,7 @@ $pagar = new PagamentoMP;
 
       <div id='payment' class='payment col-md-6'>
 
-        <h2>Pagamento e Entrega</h2>
+        <h4>Pagamento e Entrega</h4>
 
         <form method="post">
           <div class="div-select">
@@ -258,6 +258,15 @@ $pagar = new PagamentoMP;
            <div class="form-group">
             <label class="text-dark" for="exampleInputEmail1">Cidade</label>
             <input type="text" class="form-control form-control-sm" id="cidade" name="cidade" placeholder="Cidade" required value="<?php echo @$cidade ?>">
+
+          </div>
+
+        </div>
+
+        <div class="col-md-12">
+           <div class="form-group">
+            <label class="text-dark" for="exampleInputEmail1">Observações <span class="text-muted">(Retirar cebola, adicionar bacon, etc.)</span></label>
+            <textarea maxlength="350" class="form-control form-control-sm" id="obs" name="obs" required></textarea>
 
           </div>
 

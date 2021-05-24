@@ -9,6 +9,7 @@ $rua = $_POST['rua'];
 $numero = $_POST['numero'];
 $bairro = $_POST['bairro'];
 $cidade = $_POST['cidade'];
+$obs = $_POST['obs'];
 $total = $_POST['total'];
 $total_pago = 0;
 $troco = 0;
@@ -16,6 +17,26 @@ $troco = 0;
 
 if($tipo == ''){
 	echo 'Preencha o Tipo de Pagamento';
+	exit();
+}
+
+if($rua == ''){
+	echo 'Preencha a rua';
+	exit();
+}
+
+if($numero == ''){
+	echo 'Preencha o Numero';
+	exit();
+}
+
+if($cidade == ''){
+	echo 'Preencha a Cidade';
+	exit();
+}
+
+if($bairro == ''){
+	echo 'Escolha um bairro';
 	exit();
 }
 
@@ -45,7 +66,7 @@ $cpf_cliente = @$_SESSION['cpf_usuario'];
 if($cpf_cliente != ''){
 
 
-$res = $pdo->prepare("INSERT into vendas (cliente, total, total_pago, troco, tipo_pgto, data, hora, status, pago) values (:cliente, :total, :total_pago, :troco, :tipo_pgto, curDate(), curTime(), :status, :pago)");
+$res = $pdo->prepare("INSERT into vendas (cliente, total, total_pago, troco, tipo_pgto, data, hora, status, pago, obs) values (:cliente, :total, :total_pago, :troco, :tipo_pgto, curDate(), curTime(), :status, :pago, :obs)");
 
 $res->bindValue(":cliente", $cpf_cliente);
 $res->bindValue(":total", $total);
@@ -54,6 +75,7 @@ $res->bindValue(":troco", $troco);
 $res->bindValue(":tipo_pgto", $tipo);
 $res->bindValue(":status", $status);
 $res->bindValue(":pago", 'Não');
+$res->bindValue(":obs", $obs);
 
 $res->execute();
 $id_venda = $pdo->lastInsertId();
