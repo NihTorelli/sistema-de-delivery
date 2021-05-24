@@ -530,7 +530,7 @@ $res = $pdo->prepare("UPDATE usuarios set nome = :nome, usuario = :usuario, senh
     $res->bindValue(":nome", $nome);
     $res->bindValue(":usuario", $email);
     $res->bindValue(":cpf", $cpf);
-    $res->bindValue(":senha", $senha);
+    $res->bindValue(":senha", md5($senha));
    
     $res->bindValue(":telefone", $telefone);
 

@@ -423,7 +423,7 @@ if (@$_GET['acao'] == $item1){
     </div>
     <div class="modal-footer">
      <button type="button" id="btn-fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-     <button name="btn-editar" id="btn-editar" class="btn btn-info">Editar</button>
+     <button name="btn-editar" id="btn-editar-user" class="btn btn-info">Editar</button>
 
    </form>
 
@@ -436,26 +436,26 @@ if (@$_GET['acao'] == $item1){
 
 
 
-<?php if(isset($_POST['btn-editar'])){
+<?php if(isset($_POST['btn-editar-user'])){
 
 
 
-$cpf = @$_SESSION['cpf_usuario'];
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$telefone = $_POST['telefone'];
-$senha = $_POST['senha'];
+$cpf_user = @$_SESSION['cpf_usuario'];
+$nome_user = $_POST['nome'];
+$email_user = $_POST['email'];
+$telefone_user = $_POST['telefone'];
+$senha_user = $_POST['senha'];
 
 
 
 $res = $pdo->prepare("UPDATE usuarios set nome = :nome, usuario = :usuario, senha = :senha, telefone = :telefone where cpf = :cpf");
 
-    $res->bindValue(":nome", $nome);
-    $res->bindValue(":usuario", $email);
-    $res->bindValue(":cpf", $cpf);
-    $res->bindValue(":senha", $senha);
+    $res->bindValue(":nome", $nome_user);
+    $res->bindValue(":usuario", $email_user);
+    $res->bindValue(":cpf", $cpf_user);
+    $res->bindValue(":senha", md5($senha_user));
    
-    $res->bindValue(":telefone", $telefone);
+    $res->bindValue(":telefone", $telefone_user);
 
     $res->execute();
     

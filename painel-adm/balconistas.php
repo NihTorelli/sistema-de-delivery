@@ -130,7 +130,7 @@ $itens_pag = intval(@$_GET['itens']);
 
 						<input type="hidden" id="id" name="id" value="<?php echo @$id ?>">
 
-						<input type="hidden" id="reg_antigo" name="reg_antigo" value="<?php echo @$nome ?>" required>
+						<input type="hidden" id="reg_antigo" name="reg_antigo" value="<?php echo @$cpf ?>" required>
 
 						<button id="btn-fechar" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 
@@ -396,3 +396,6 @@ if(@$_GET['funcao'] == 'excluir' && @$item_paginado == ''){
 		})
 	})
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script src="../js/mascaras.js"></script>
