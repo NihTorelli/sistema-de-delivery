@@ -88,6 +88,15 @@ $agora = date('Y-m-d');
 
 
 
+<script>
+function produtosModal(id) {
+	$("#id").text(id);
+}
+</script>
+
+
+
+
 
 
 

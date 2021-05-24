@@ -19,6 +19,7 @@ echo '
 			<th scope="col">Tipo PGTO</th>
 			<th scope="col">Status</th>
 			<th scope="col">Pago</th>
+			<th scope="col">Produtos</th>
 
 			
 			
@@ -92,7 +93,11 @@ echo '
 			<td>R$ '.$total.'</td>
 			<td>'.$tipo_pgto.'</td>
 			<td>'.$status.'</td>
-			<td>'.$pago.'</td>		
+			<td>'.$pago.'</td>
+			<td>
+				<a href="" onclick="produtosModal('.$id.')">
+				<i class="fas fa-box-full text-info"></i></a>
+			</td>		
 			
 			
 			
