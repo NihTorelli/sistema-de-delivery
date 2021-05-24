@@ -102,7 +102,7 @@ $agora = date('Y-m-d');
                   <div class="modal-body">
                  
                     <div id="listar-produtos">
-					
+
 					</div>
 
                   </div>
@@ -117,8 +117,28 @@ $agora = date('Y-m-d');
 <script>
 function produtosModal(id) {
 	$("#id").text(id);
+
+	var pag = "<?=$pagina?>";
+
+		$.ajax({
+			url: pag + "/listar-produtos.php",
+			method: "post",
+			data: {id},
+			dataType: "html",
+			success: function(result){
+				$('#listar-produtos').html(result)
+
+			},
+
+			
+		})
 }
 </script>
+
+
+
+
+
 
 
 

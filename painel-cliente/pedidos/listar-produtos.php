@@ -4,8 +4,8 @@ require_once("../../conexao.php");
 $pagina = 'pedidos';
 
 
-@session_start();
-$cpf_cliente = @$_SESSION['cpf_usuario'];
+
+$id_venda = $_POST['id'];
 
 
 echo '
@@ -16,7 +16,9 @@ echo '
 
                         
 
-            $total;
+		  	$res = $pdo->query("SELECT * from carrinho where id_venda = '$id_venda' order by id asc");
+		  	$dados = $res->fetchAll(PDO::FETCH_ASSOC);
+		  	$linhas = count($dados);
             for ($i=0; $i < count($dados); $i++) { 
               foreach ($dados[$i] as $key => $value) {
               }
@@ -31,6 +33,8 @@ echo '
               $nome_produto = $dados_p[0]['nome'];  
               $valor = $dados_p[0]['valor'];
               $imagem = $dados_p[0]['imagem'];
+			  $total_item = $valor * $quantidade;
+			  $total_item = number_format($total_item, 2, ',', '.');
 
 
               echo '
