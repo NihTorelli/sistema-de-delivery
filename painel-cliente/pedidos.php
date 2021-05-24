@@ -101,7 +101,9 @@ $agora = date('Y-m-d');
                   </div>
                   <div class="modal-body">
                  
-                    <span id="id"></span>
+                    <div id="listar-produtos">
+					
+					</div>
 
                   </div>
                   
