@@ -32,7 +32,7 @@
     $res->bindValue(":nome", $nome);
     $res->bindValue(":usuario", $email);
     $res->bindValue(":cpf", $cpf);
-    $res->bindValue(":senha", md5($senha));
+    $res->bindValue(":senha", base64_encode($senha));
     $res->bindValue(":nivel", 'Cliente');
     $res->bindValue(":telefone", $telefone);
 

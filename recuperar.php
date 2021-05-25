@@ -16,6 +16,7 @@ $email_usuario = $_POST['email-recuperar'];
         $nome_usu = $dados[0]['nome'];
         $senha_usu = $dados[0]['senha'];
         $nivel_usu = $dados[0]['nivel'];
+        $senha_usu_env = base64_decode($senha_usu);
     }else {
         echo 'Este e-mail não está cadastrado no sistema!';
         exit();
@@ -29,7 +30,7 @@ $email_usuario = $_POST['email-recuperar'];
 
     $message = "
     Olá $nome_usu!!<br><br>
-    Sua senha é <b>$senha_usu </b><br><br>
+    Sua senha é <b> $senha_usu_env </b><br><br>
     Ir para o Sistema -> <a href='$url_site' target='_blank'>Clique Aqui </a>
     ";
 

@@ -406,7 +406,7 @@ if (@$_GET['acao'] == $item1){
           <div class="col-md-3">
            <div class="form-group">
             <label class="text-dark" for="exampleInputEmail1">Senha</label>
-            <input type="password" class="form-control form-control-sm" id="senha_u" name="senha_u" placeholder="Senha" required value="<?php echo @$senha_u ?>">
+            <input type="password" class="form-control form-control-sm" id="senha_u" name="senha_u" placeholder="Senha" required value="<?php echo base64_decode(@$senha_u) ?>">
 
           </div>
 
@@ -453,7 +453,7 @@ $res = $pdo->prepare("UPDATE usuarios set nome = :nome, usuario = :usuario, senh
     $res->bindValue(":nome", $nome_user);
     $res->bindValue(":usuario", $email_user);
     $res->bindValue(":cpf", $cpf_user);
-    $res->bindValue(":senha", md5($senha_user));
+    $res->bindValue(":senha", base64_encode($senha_user));
    
     $res->bindValue(":telefone", $telefone_user);
 

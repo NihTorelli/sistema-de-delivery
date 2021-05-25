@@ -142,8 +142,8 @@ echo '
 				if($obs != ''){
 
 				echo '
-				<a title="Observações" href="" onclick="obsModal('.$obs.')" data-toggle="modal" data-target="#modal-obs">
-				<i class="fas fa-sticky-note '.$classe.' ml-1"></i></a>';
+				<a title="Observações do Pedido" href="" onclick="obsModal(\''.$obs.'\')" data-toggle="modal" data-target="#modal-obs"><i class="fas fa-sticky-note '.$classe.' ml-1"></i></a> ';
+
 				}
 
 			echo '</td>			

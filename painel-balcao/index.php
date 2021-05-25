@@ -327,7 +327,7 @@ $cpf_usuario = @$_SESSION['cpf_usuario'];
           <div class="col-md-3">
            <div class="form-group">
             <label class="text-dark" for="exampleInputEmail1">Senha</label>
-            <input type="password" class="form-control form-control-sm" id="senha" name="senha" placeholder="Senha" required value="<?php echo @$senha ?>">
+            <input type="password" class="form-control form-control-sm" id="senha" name="senha" placeholder="Senha" required value="<?php echo base64_decode(@$senha) ?>">
 
           </div>
 
@@ -383,7 +383,7 @@ $res = $pdo->prepare("UPDATE usuarios set nome = :nome, usuario = :usuario, senh
     $res->bindValue(":nome", $nome);
     $res->bindValue(":usuario", $email);
     $res->bindValue(":cpf", $cpf);
-    $res->bindValue(":senha", md5($senha));
+    $res->bindValue(":senha", base64_encode($senha));
    
     $res->bindValue(":telefone", $telefone);
 
