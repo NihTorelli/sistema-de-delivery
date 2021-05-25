@@ -70,6 +70,7 @@ echo '
 			$pago = $dados[$i]['pago'];
 			$troco = $dados[$i]['troco'];
 			$cliente = $dados[$i]['cliente'];
+			$obs = $dados[$i]['obs'];
 			
 
 			if ($status == 'Iniciado'){
@@ -136,8 +137,16 @@ echo '
 				<i class="fas fa-box-open '.$classe.'"></i></a>
 
 				<a title="Dados Cliente" href="" onclick="clienteModal('.$id.')" data-toggle="modal" data-target="#modal-cliente">
-				<i class="fas fa-user '.$classe.' ml-1"></i></a>
-			</td>			
+				<i class="fas fa-user '.$classe.' ml-1"></i></a>';
+
+				if($obs != ''){
+
+				echo '
+				<a title="Observações" href="" onclick="obsModal('.$obs.')" data-toggle="modal" data-target="#modal-obs">
+				<i class="fas fa-sticky-note '.$classe.' ml-1"></i></a>';
+				}
+
+			echo '</td>			
 		</tr>';
 
 	}

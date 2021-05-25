@@ -162,6 +162,31 @@ $agora = date('Y-m-d');
 
 
 
+
+<!--MODAL PARA MOSTRAR OBSERVAÇÕES -->
+
+<div class="modal fade" id="modal-obs" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 id="texto-descricao" class="modal-title">Observações do Pedido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                 
+                    <span id="texto-descricao-longa"></span>
+
+                  </div>
+                  
+               </div>
+             </div>
+           </div>
+
+
+
+
 <script>
 function produtosModal(id) {
 	$("#id").text(id);
@@ -274,6 +299,15 @@ function clienteModal(id) {
 
 			
 		})
+}
+</script>
+
+
+
+<script>
+function obsModal(obs) {
+    
+    $("#texto-descricao-longa").text(obs);
 }
 </script>
 

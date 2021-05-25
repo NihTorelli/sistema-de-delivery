@@ -76,7 +76,7 @@ echo '
 			}else if($status == 'Despachado'){
 				$classe = 'bg-warning';
 			}else{
-				$classe = '';
+				$classe = 'bg-success';
 			}
 		
 			
