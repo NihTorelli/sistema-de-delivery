@@ -3,6 +3,9 @@
 require_once("../../conexao.php");
 $pagina = 'pedidos';
 
+$res_taxa = $pdo->query("SELECT taxa_entrega from config where id = 1");
+$dados_taxa = $res_taxa->fetchAll(PDO::FETCH_ASSOC);
+$tx = $dados_taxa;
 
 @session_start();
 $cpf_cliente = @$_SESSION['cpf_usuario'];
@@ -14,7 +17,7 @@ echo '
 		<tr>
 			<th scope="col">Hora</th>
 			<th scope="col">Previsão de Entrega</th>
-			<th scope="col">Total</th>
+			<th scope="col">Total</th>			
 			<th scope="col">Tipo PGTO</th>
 			<th scope="col">Status</th>
 			<th scope="col">Pago</th>
@@ -60,7 +63,7 @@ echo '
 
 			$id = $dados[$i]['id'];	
 			$hora = $dados[$i]['hora'];
-			$total = $dados[$i]['total'];
+			$total = $dados[$i]['total'];						
 			$tipo_pgto = $dados[$i]['tipo_pgto'];
 			$status = $dados[$i]['status'];
 			$pago = $dados[$i]['pago'];
@@ -69,14 +72,13 @@ echo '
 			if ($status == 'Iniciado'){
 				$classe = 'bg-info';
 			}else if($status == 'Preparando'){
-				$classe = 'bg-primary';
+				$classe = 'bg-danger';
 			}else if($status == 'Despachado'){
 				$classe = 'bg-warning';
 			}else{
 				$classe = '';
 			}
 		
-
 			
 
 echo '
@@ -85,7 +87,7 @@ echo '
 			
 			<td>'.$hora.'</td>
 			<td>'.date("H:i", strtotime("$hora + $previsao_minutos minutes")).'</td>
-			<td>R$ '.$total.'</td>
+			<td>R$ '.$total.'</td>			
 			<td>'.$tipo_pgto.'</td>
 			<td>'.$status.'</td>
 			<td>'.$pago.'</td>

@@ -111,7 +111,7 @@ for ($i=0; $i < count($dados); $i++) {
 
 
 //ATUALIZAR OS DADOS DE ENDEREÇO DO CLIENTE
-$res = $pdo->prepare("UPDATE clientes SET rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade");
+$res = $pdo->prepare("UPDATE clientes SET rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade where cpf = '$cpf_cliente'");
 
 $res->bindValue(":rua", $rua);
 $res->bindValue(":numero", $numero);

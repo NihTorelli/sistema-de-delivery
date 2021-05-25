@@ -135,8 +135,8 @@ echo '
 				<a title="Ver Produtos" href="" onclick="produtosModal('.$id.')" data-toggle="modal" data-target="#modal-produtos">
 				<i class="fas fa-box-open '.$classe.'"></i></a>
 
-				<a title="Ver Cliente" href="" onclick="clienteModal('.$cliente.')" data-toggle="modal" data-target="#modal-cliente">
-				<i class="fas fa-user '.$classe.'"></i></a>
+				<a title="Dados Cliente" href="" onclick="clienteModal('.$id.')" data-toggle="modal" data-target="#modal-cliente">
+				<i class="fas fa-user '.$classe.' ml-1"></i></a>
 			</td>			
 		</tr>';
 

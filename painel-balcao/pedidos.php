@@ -139,7 +139,7 @@ $agora = date('Y-m-d');
 <!--MODAL PARA MOSTRAR DADOS DO CLIENTE -->
 
 <div class="modal fade" id="modal-cliente" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title">Cliente</h5>
@@ -258,8 +258,7 @@ function mudarStatus(id, status) {
 
 
 <script>
-function clienteModal(id) {
-	$("#id").text(id);
+function clienteModal(id) {	
 
 	var pag = "<?=$pagina?>";
 
