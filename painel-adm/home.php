@@ -1,4 +1,20 @@
 <!-- Main content -->
+<?php
+        
+
+        $res_count_cli = $pdo->query("SELECT * from clientes");
+        $dados_count_cli = $res_count_cli->fetchAll(PDO::FETCH_ASSOC);
+
+        $res_count_pedidos = $pdo->query("SELECT * from vendas where data = curDate()");
+        $dados_count_pedidos = $res_count_pedidos->fetchAll(PDO::FETCH_ASSOC);
+
+        $res_count_abertos = $pdo->query("SELECT * from vendas where pago = 'Não' and data = curDate()");
+        $dados_count_abertos = $res_count_abertos->fetchAll(PDO::FETCH_ASSOC);        
+
+?>
+
+
+
 <section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
@@ -10,7 +26,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Clientes</span>
                 <span class="info-box-number">
-                  10
+                  <?php echo count($dados_count_cli) ?>
                   <small></small>
                 </span>
               </div>
@@ -25,7 +41,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Pedidos de Hoje</span>
-                <span class="info-box-number">8</span>
+                <span class="info-box-number"><?php echo count($dados_count_pedidos) ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -42,7 +58,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Entregas em Aberto</span>
-                <span class="info-box-number">4</span>
+                <span class="info-box-number"><?php echo count($dados_count_abertos) ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>

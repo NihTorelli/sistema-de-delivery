@@ -6,7 +6,7 @@ $id = $_POST['id'];
 
 
 
-$pdo->query("DELETE from locais where id = '$id' ");
+$pdo->query("DELETE from usuarios where id = '$id' ");
 
 echo "Excluído com Sucesso!!";
 

@@ -134,6 +134,34 @@ $agora = date('Y-m-d');
 
 
 
+
+
+<!--MODAL PARA MOSTRAR DADOS DO CLIENTE -->
+
+<div class="modal fade" id="modal-cliente" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                 
+                    <div id="listar-cliente">
+
+					</div>
+
+                  </div>
+                  
+               </div>
+             </div>
+           </div>
+
+
+
+
 <script>
 function produtosModal(id) {
 	$("#id").text(id);
@@ -229,7 +257,26 @@ function mudarStatus(id, status) {
 
 
 
+<script>
+function clienteModal(id) {
+	$("#id").text(id);
 
+	var pag = "<?=$pagina?>";
+
+		$.ajax({
+			url: pag + "/listar-cliente.php",
+			method: "post",
+			data: {id},
+			dataType: "html",
+			success: function(result){
+				$('#listar-cliente').html(result)
+
+			},
+
+			
+		})
+}
+</script>
 
 
 

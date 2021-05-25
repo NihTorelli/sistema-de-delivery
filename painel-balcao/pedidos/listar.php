@@ -69,6 +69,7 @@ echo '
 			$status = $dados[$i]['status'];
 			$pago = $dados[$i]['pago'];
 			$troco = $dados[$i]['troco'];
+			$cliente = $dados[$i]['cliente'];
 			
 
 			if ($status == 'Iniciado'){
@@ -131,8 +132,11 @@ echo '
 			<td>'.$troco.'</td>			
 			<td>'.$pago.'</td>
 			<td>
-				<a href="" onclick="produtosModal('.$id.')" data-toggle="modal" data-target="#modal-produtos">
+				<a title="Ver Produtos" href="" onclick="produtosModal('.$id.')" data-toggle="modal" data-target="#modal-produtos">
 				<i class="fas fa-box-open '.$classe.'"></i></a>
+
+				<a title="Ver Cliente" href="" onclick="clienteModal('.$cliente.')" data-toggle="modal" data-target="#modal-cliente">
+				<i class="fas fa-user '.$classe.'"></i></a>
 			</td>			
 		</tr>';
 
