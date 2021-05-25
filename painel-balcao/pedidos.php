@@ -157,6 +157,72 @@ function produtosModal(id) {
 
 
 
+<!--AJAX PARA BUSCAR A DATA -->
+<script type="text/javascript">
+	$('#txtbuscar').change(function(){
+		$('#btn-buscar').click();
+	})
+</script>
+
+
+
+<script>
+function atualizarPedidos() {
+	 var pag = "<?=$pagina?>";
+  $.ajax({
+			url: pag + "/listar.php",
+			method: "post",
+			data: $('#frm').serialize(),
+			dataType: "html",
+			success: function(result){
+				$('#listar').html(result)
+
+			},
+
+			
+		})
+}
+</script>
+
+
+
+
+<script>
+function mudarStatus(id, status) {
+    event.preventDefault();
+            
+            var pag = "<?=$pagina?>";
+
+            $.ajax({
+
+               url: pag + "/alterar-status.php",
+                method: "post",
+                data: {id, status},
+                dataType: "text",
+                success: function(mensagem){
+
+                    $('#mensagem').removeClass()
+
+                    if(mensagem == 'Editado com Sucesso!!'){
+                        atualizarPedidos();
+                       //$("#modal-carrinho").modal("show");
+                     
+
+                    }else{
+                      
+                       
+                    }
+                    
+                    $('#mensagem').text(mensagem)
+
+                },
+                
+            })
+}
+</script>
+
+
+
 
 
 

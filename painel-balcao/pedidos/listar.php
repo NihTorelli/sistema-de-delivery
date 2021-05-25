@@ -74,7 +74,7 @@ echo '
 			if ($status == 'Iniciado'){
 				$classe = 'bg-info';
 			}else if($status == 'Preparando'){
-				$classe = 'bg-primary';
+				$classe = 'bg-danger';
 			}else if($status == 'Despachado'){
 				$classe = 'bg-warning';				
 			}else if($status == 'Concluído'){
@@ -92,7 +92,42 @@ echo '
 			
 			<td>'.$hora.'</td>
 			<td>'.$tipo_pgto.'</td>
-			<td>'.$status.'</td>
+			<td>';
+
+			echo $status;
+			
+			if($status == 'Iniciado'){
+				$stat = 'Preparando';
+				echo '
+				<a href="" title="Avançar status para Preparando" onclick="mudarStatus('.$id.',\''.$stat.'\')" id="btn-carrinho">
+				<i class="fas fa-square ml-1 '.$classe.'"></i>
+				</a>
+				';
+			}else if($status == 'Preparando'){
+				$stat = 'Despachado';
+				echo '
+				<a href="" title="Avançar status para Despachado" onclick="mudarStatus('.$id.',\''.$stat.'\')" id="btn-carrinho">
+				<i class="fas fa-square ml-1 '.$classe.'"></i>
+				</a>
+				';
+			}else if($status == 'Despachado'){
+				$stat = 'Concluído';
+				echo '
+				<a href="" title="Avançar status para Concluído" onclick="mudarStatus('.$id.',\''.$stat.'\')" id="btn-carrinho">
+				<i class="fas fa-square ml-1 '.$classe.'"></i>
+				</a>
+				';
+			}else if($status == 'Concluído'){
+				$stat = 'Pago';
+				echo '
+				<a href="" title="Finalizar Pagamento" onclick="mudarStatus('.$id.',\''.$stat.'\')" id="btn-carrinho">
+				<i class="fas fa-square ml-1 '.$classe.'"></i>
+				</a>
+				';
+			}else{
+				$classe = '';
+			}
+			echo '</td>
 			<td>'.$troco.'</td>			
 			<td>'.$pago.'</td>
 			<td>

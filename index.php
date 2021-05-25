@@ -251,6 +251,9 @@
         $res_count_cli = $pdo->query("SELECT * from clientes");
         $dados_count_cli = $res_count_cli->fetchAll(PDO::FETCH_ASSOC);
 
+        $res_count_entregas = $pdo->query("SELECT * from vendas where pago = 'Sim'");
+        $dados_count_entregas = $res_count_entregas->fetchAll(PDO::FETCH_ASSOC);
+
       ?>
       <section class="section">
         <div class="parallax-container" data-parallax-img="images/numeros.jpg">
@@ -266,7 +269,7 @@
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".1s">
                   <div class="counter-creative">
-                    <div class="counter-creative-number"><span class="counter">687</span><span class="symbol"></span><span class="icon counter-creative-icon fl-bigmug-line-checkmark14"></span>
+                    <div class="counter-creative-number"><span class="counter"><?php echo count($dados_count_entregas) ?></span><span class="symbol"></span><span class="icon counter-creative-icon fl-bigmug-line-checkmark14"></span>
                     </div>
                     <h6 class="counter-creative-title">Entregas Realizadas</h6>
                   </div>
