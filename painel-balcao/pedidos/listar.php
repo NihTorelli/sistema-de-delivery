@@ -139,7 +139,7 @@ echo '
 				<a title="Dados Cliente" href="" onclick="clienteModal('.$id.')" data-toggle="modal" data-target="#modal-cliente">
 				<i class="fas fa-user '.$classe.' ml-1"></i></a>
 
-				<a title="Gerar Comprovante" href="" target="_blank">
+				<a title="Gerar Comprovante" href="rel/comprovante_class.php?id='.$id.'" target="_blank">
 				<i class="fas fa-clipboard-list '.$classe.' ml-1"></i></a>';
 
 				if($obs != ''){
