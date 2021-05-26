@@ -10,9 +10,15 @@ if($_SESSION['nivel_usuario'] != 'Balconista'){
 
 //ESTRUTURA DO MENU
 $item1 = 'pedidos';
+$item2 = 'pedidos-concluidos';
 
 
-
+//CLASSE PARA OS ITENS ATIVOS
+if(@$_GET['acao'] == $item1){
+  $item1ativo = 'active';
+}else if(@$_GET['acao'] == $item2){
+  $item2ativo = 'active';
+}
 
 
 
@@ -80,6 +86,9 @@ $item1 = 'pedidos';
         <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link <?php echo $item1ativo ?>">Pedidos</a>
       </li>
       
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php?acao=<?php echo $item2 ?>" class="nav-link <?php echo $item2ativo ?>">Pedidos Concluídos</a>
+      </li>
         
 
    
@@ -165,10 +174,21 @@ $item1 = 'pedidos';
                with font-awesome or any other icon font library -->
          
           <li class="nav-item ">
-            <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link active">
-              <i class="nav-icon fas fa-home"></i>
+            <a href="index.php?acao=<?php echo $item1 ?>" class="nav-link <?php echo $item1ativo ?>">
+              <i class="nav-icon fas fa-bell"></i>
               <p>
                 Pedidos
+                
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a href="index.php?acao=<?php echo $item2 ?>" class="nav-link <?php echo $item2ativo ?>">
+              <i class="nav-icon fas fa-check"></i>
+              <p>
+                Pedidos Concluídos
                 
               </p>
             </a>
@@ -213,6 +233,8 @@ $item1 = 'pedidos';
        <?php 
         if(@$_GET['acao'] == $item1){
           include_once($item1.'.php');
+        }else if(@$_GET['acao'] == $item2){
+          include_once($item2.'.php');
         }
 
 
