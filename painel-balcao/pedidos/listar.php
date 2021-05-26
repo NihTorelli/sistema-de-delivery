@@ -137,12 +137,16 @@ echo '
 				<i class="fas fa-box-open '.$classe.'"></i></a>
 
 				<a title="Dados Cliente" href="" onclick="clienteModal('.$id.')" data-toggle="modal" data-target="#modal-cliente">
-				<i class="fas fa-user '.$classe.' ml-1"></i></a>';
+				<i class="fas fa-user '.$classe.' ml-1"></i></a>
+
+				<a title="Gerar Comprovante" href="" target="_blank">
+				<i class="fas fa-clipboard-list '.$classe.' ml-1"></i></a>';
 
 				if($obs != ''){
 
 				echo '
-				<a title="Observações do Pedido" href="" onclick="obsModal(\''.$obs.'\')" data-toggle="modal" data-target="#modal-obs"><i class="fas fa-sticky-note '.$classe.' ml-1"></i></a> ';
+				<a title="Observações do Pedido" href="" onclick="obsModal(\''.$obs.'\')" data-toggle="modal" data-target="#modal-obs">
+				<i class="fas fa-sticky-note '.$classe.' ml-1"></i></a> ';
 
 				}
 
