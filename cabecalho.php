@@ -52,7 +52,7 @@ include_once("conexao.php");
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Basket-->
                     <div class="rd-navbar-basket-wrap">
-                      <button class="rd-navbar-basket fl-bigmug-line-shopping198" data-rd-navbar-toggle=".cart-inline"><span>2</span></button>
+                      <button class="rd-navbar-basket fl-bigmug-line-shopping198" data-rd-navbar-toggle=".cart-inline"><span id="total_itens_3">2</span></button>
                       <div class="cart-inline">
                         <div class="cart-inline-header">
                           <span class="dados-usuarios">
@@ -62,46 +62,22 @@ include_once("conexao.php");
                           <a href="logout.php" title="Sair">
                             <img src="images/logout.png" width="20px">
                           </a></i></p></span>
-                          <h5 class="cart-inline-title">Carrinho:<span> 2</span> Produtos</h5>
-                          <h6 class="cart-inline-title">Valor total:<span> $800</span></h6>
+                          <h5 class="cart-inline-title">Carrinho:<span id="total_itens_2" class="ml-1"></span> Produto(s)</h5>
+                          <input type="hidden" id="txtquantidade">
+                          
                         </div>
                         <div class="cart-inline-body">
-                          <div class="cart-inline-item">
-                            <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="images/product-mini-1-108x100.png" alt="" width="108" height="100"/></a></div>
-                              <div class="unit-body">
-                                <h6 class="cart-inline-name"><a href="#">Nome Produto</a></h6>
-                                <div>
-                                  <div class="group-xs group-inline-middle">
-                                    <div class="table-cart-stepper">
-                                      <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                    </div>
-                                    <h6 class="cart-inline-title">$550</h6>
-                                  </div>
-                                </div>
-                              </div>
+                        <?php if(@$_SESSION['cpf_usuario'] == ''){
+                          echo 'É necessário iniciar uma sessão, faça seu login clicando <strong><a class="vermelho-link" href="login" target="_blank" title="Ir para o Login"> aqui </a></strong>, caso não tenha login faça seu cadastro!';
+
+                            }else{ ?>
+                            <div id="listar-carrinho-cab">
+                            
                             </div>
-                          </div>
-                          <div class="cart-inline-item">
-                            <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="images/product-mini-2-108x100.png" alt="" width="108" height="100"/></a></div>
-                              <div class="unit-body">
-                                <h6 class="cart-inline-name"><a href="#">Nome Produto</a></h6>
-                                <div>
-                                  <div class="group-xs group-inline-middle">
-                                    <div class="table-cart-stepper">
-                                      <input class="form-input" type="number" data-zeros="true" value="1" min="1" max="1000">
-                                    </div>
-                                    <h6 class="cart-inline-title">$250</h6>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-inline-footer">
-                          <div class="group-sm"><a class="button button-md button-default-outline-2 button-wapasha" href="#">Ver Pedido</a><a class="button button-md button-primary button-pipaluk" href="#">Pagamentos</a></div>
-                        </div>
+                          <?php } ?>
+                        </div>                        
+                          
+                        
                       </div>
                     </div><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping198" href="#"><span>2</span></a>
                     <!-- RD Navbar Search-->
@@ -468,3 +444,157 @@ include_once("conexao.php");
   
 } ?>
 
+
+
+
+
+<!--AJAX PARA INSERÇÃO DOS DADOS VINDO DE UMA FUNÇÃO -->
+<script>
+function carrinhoModal(idproduto) {
+  
+  
+     event.preventDefault();
+            
+            $.ajax({
+
+                url: "carrinho/inserir-carrinho.php",
+                method: "post",
+                data: {idproduto},
+                dataType: "text",
+                success: function(mensagem){
+
+                    $('#mensagem').removeClass()
+
+                    if(mensagem == 'Cadastrado com Sucesso!!'){
+                        atualizarCarrinho();
+                       $("#modal-carrinho").modal("show");
+
+                    }else{
+                        
+                       
+                    }
+                    
+                    $('#mensagem').text(mensagem)
+
+                },
+                
+            })
+}
+</script>
+
+
+
+
+
+
+
+<!--AJAX PARA LISTAR OS DADOS -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    
+    
+
+    $.ajax({
+      url:  "carrinho/listar-carrinho-cab.php",
+      method: "post",
+      data: $('#frm').serialize(),
+      dataType: "html",
+      success: function(result){
+        $('#listar-carrinho-cab').html(result)
+
+      },
+
+      
+    })
+  })
+</script>
+
+
+
+
+<script>
+function atualizarCarrinhoCab() {
+    $.ajax({
+      url:  "carrinho/listar-carrinho-cab.php",
+      method: "post",
+      data: $('#frm').serialize(),
+      dataType: "html",
+      success: function(result){
+        $('#listar-carrinho-cab').html(result)
+
+      },
+     })
+}
+</script>
+
+
+
+<script>
+function deletarCarrinhoCab(id) {
+
+   event.preventDefault();
+            
+            $.ajax({
+
+                url: "carrinho/excluir-carrinho.php",
+                method: "post",
+                data: {id},
+                dataType: "text",
+                success: function(mensagem){
+
+                    $('#mensagem').removeClass()
+
+                    if(mensagem == 'Excluido com Sucesso!!'){
+                        atualizarCarrinhoCab();
+                       //$("#modal-carrinho").modal("show");
+
+                    }else{
+                        
+                       
+                    }
+                    
+                    $('#mensagem').text(mensagem)
+
+                },
+                
+            })
+   
+}
+</script>
+
+
+
+<script type="text/javascript">
+   function editarCarrinhoCab(id) {
+        
+        var quantidade = document.getElementById('txtquantidade').value;
+        event.preventDefault();
+            
+            $.ajax({
+
+                url: "carrinho/editar-carrinho.php",
+                method: "post",
+                data: {id, quantidade},
+                dataType: "text",
+                success: function(mensagem){
+
+                    $('#mensagem').removeClass()
+
+                    if(mensagem == 'Editado com Sucesso!!'){
+                        atualizarCarrinhoCab();
+                       //$("#modal-carrinho").modal("show");
+
+                    }else{
+                        
+                       
+                    }
+                    
+                    $('#mensagem').text(mensagem)
+
+                },
+                
+            })
+
+        
+      }
+</script>
