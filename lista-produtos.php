@@ -28,7 +28,7 @@ include_once("conexao.php");
           $limite = $pagina * $itens_por_pagina;
 
 
-          $res = $pdo->query("SELECT * from produtos order by vendas desc");
+          $res = $pdo->query("SELECT * FROM produtos order by vendas desc LIMIT $limite, $itens_por_pagina");
           $dados = $res->fetchAll(PDO::FETCH_ASSOC);
           for ($i=0; $i < count($dados); $i++) { 
             foreach ($dados[$i] as $key => $value) {
@@ -51,7 +51,7 @@ include_once("conexao.php");
 
             //BUSCAR TODOS OS PRODUTOS PARA DEFINIR O TOTAL PARA DIVIDIR POR PÁGINAS
             $res_p = $pdo->query("SELECT * FROM produtos");
-            $dados_p = $res->fetchAll(PDO::FETCH_ASSOC);
+            $dados_p = $res_p->fetchAll(PDO::FETCH_ASSOC);
             $num_total = count($dados_p);
 
             //DEFINIR NUMERO DE PÁGINAS
@@ -91,12 +91,44 @@ include_once("conexao.php");
      </div>
    </div>
 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+<div class="row paginacao mt-2">
+         <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="btn btn-outline-dark btn-sm" href="lista-produtos.php?pagina=0" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <?php 
+            for($i = 0; $i < $num_paginas; $i++){
+            $estilo = "";
+            if($pagina >= ($i - 2) and $pagina <= ($i + 2)){
+            if($pagina == $i)
+              $estilo = "active";
+            ?>
+             <li class="page-item"><a class="btn btn-outline-dark btn-sm  <?php echo $estilo; ?>" href="lista-produtos.php?pagina=<?php echo $i; ?>"><?php echo $i + 1; ?></a></li>
+          <?php } } ?>
+            
+            <li class="page-item">
+              <a class="btn btn-outline-dark btn-sm " href="lista-produtos.php?pagina=<?php echo $num_paginas - 2; ?>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+       </div>
+
 
 
 
  </div>
 </section>
-
 
 
 
