@@ -1,3 +1,31 @@
+<?php 
+    $cpf = $_SESSION['cpf_usuario'];
+    $res_todos = $pdo->query("SELECT * from vendas where cliente = '$cpf'");
+    $dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
+    $total_pedidos = count($dados_total);
+
+
+    $res_todos = $pdo->query("SELECT * from carrinho where cpf = '$cpf' and id_venda != 0");
+    $dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
+    $total_produtos = count($dados_total);
+
+
+    $res_todos = $pdo->query("SELECT * from carrinho where cpf = '$cpf' and id_venda = 0");
+    $dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
+    $total_carrinho = count($dados_total);
+
+
+
+      $carimbos = 0;
+
+
+      $res_todos = $pdo->query("SELECT * from clientes where cpf = '$cpf'");
+      $dados_total = $res_todos->fetchAll(PDO::FETCH_ASSOC);
+      $carimbos = $dados_total[0]['cartao'];
+                                     
+   
+  ?>
+
 <!-- Main content -->
 <section class="content">
       <div class="container-fluid">
@@ -10,7 +38,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Pedidos</span>
                 <span class="info-box-number">
-                  10
+                  <?php echo $total_pedidos ?>
                   <small></small>
                 </span>
               </div>
@@ -25,7 +53,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Produtos Comprados</span>
-                <span class="info-box-number">4</span>
+                <span class="info-box-number"><?php echo $total_produtos ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -44,7 +72,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Carrinho</span>
-                <span class="info-box-number">2</span>
+                <span class="info-box-number"><?php echo $total_carrinho ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -58,7 +86,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Cartão Fidelidade</span>
-                <span class="info-box-number">3</span>
+                <span class="info-box-number"><?php echo $carimbos ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
