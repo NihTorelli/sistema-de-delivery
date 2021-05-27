@@ -275,7 +275,7 @@ $pagar = new PagamentoMP;
            
           </div>
 
-           <input type="hidden" id="total" name="total"  value="<?php echo @$total ?>">
+           <input type="hidden" id="total" name="total"  value="<?php echo @$total_final ?>">
 
           <button id="btn-finalizar" class='button-cta' title='Finalizar a Compra'><span>CONCLUIR</span></button>
 
@@ -341,7 +341,7 @@ $pagar = new PagamentoMP;
                         
                         $('#mensagem').addClass('text-success');
                         alert('Pedido Finalizado!');
-                        window.location='painel-cliente';
+                        window.location='painel-cliente/index.php?acao=pedidos';
                        
                         //$('#btn-fechar').click();
                         //location.reload();

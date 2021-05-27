@@ -2,12 +2,20 @@
 
     $email_adm = 'burgertorelli@gmail.com';
     $url_site = 'http://localhost/delivery/';
+    $nome_loja = 'Delivery Torelli';
 
     //DADOS PARA CONEXÃO COM BD LOCAL
     $banco = 'delivery';
     $host = 'localhost';
     $usuario = 'root';
     $senha = '';
+
+
+    //DADOS PARA CONEXÃO UMBLER
+    /*$banco = 'deliverytorelli';
+    $host = 'testedeliverytorelli-com-br.umbler.net';
+    $usuario = 'testedeliverytorelli-com-br';
+    $senha = '*%NiIHt&_yDyh!%';*/
 
     
     

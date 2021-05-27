@@ -22,7 +22,7 @@
 }
 
 html {
-  display: -dompdf-page;
+  display: -dompdf-page !important;
   counter-reset: page;
 }
 
@@ -48,7 +48,7 @@ summary {
 
 body {
   page-break-before: avoid;
-  display: block;
+  display: block !important;
   counter-increment: page;
 }
 
@@ -144,7 +144,7 @@ table {
   margin-top: 0;
   margin-bottom: 0;
   text-indent: 0;
-  text-align: left; /* quirk */
+  text-align: left; /* quirk */ 
 }
 
 table[border] {
@@ -161,7 +161,12 @@ table[border] th {
 
 /* make sure backgrounds are inherited in tables  -- see bug 4510 */
 td, th, tr {
-  background: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  background-image-resolution: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  background-size: inherit;
 }
 
 /* caption inherits from table not table-outer */
@@ -213,13 +218,14 @@ td {
 th {
   display: table-cell;
   vertical-align: inherit;
+  text-align: center;
   font-weight: bold;
   padding: 1px;
 }
 
-/* inlines */
+/* inlines 
 q {
-  quotes: '"' '"' "'" "'"; /* FIXME only the first level is used */
+  quotes: '"' '"' "'" "'"; /* FIXME only the first level is used 
 }
 
 q:before {
@@ -284,13 +290,13 @@ mark {
   color: black;
 }
 
-/* titles */
+/* titles*/ 
 
 abbr[title], acronym[title] {
   text-decoration: dotted underline;
 }
 
-/* lists */
+/* lists 
 
 ul, menu, dir {
   display: block;
@@ -316,7 +322,7 @@ li {
   padding-right: 0.5em;
 }*/
 
-/* nested lists have no top/bottom margins */
+/* nested lists have no top/bottom margins 
 :matches(ul, ol, dir, menu, dl) ul,
 :matches(ul, ol, dir, menu, dl) ol,
 :matches(ul, ol, dir, menu, dl) dir,
@@ -326,7 +332,7 @@ li {
   margin-bottom: 0;
 }
 
-/* 2 deep unordered lists use a circle */
+/* 2 deep unordered lists use a circle 
 :matches(ul, ol, dir, menu) ul,
 :matches(ul, ol, dir, menu) ul,
 :matches(ul, ol, dir, menu) ul,
@@ -334,7 +340,7 @@ li {
   list-style-type: circle;
 }
 
-/* 3 deep (or more) unordered lists use a square */
+/* 3 deep (or more) unordered lists use a square 
 :matches(ul, ol, dir, menu) :matches(ul, ol, dir, menu) ul,
 :matches(ul, ol, dir, menu) :matches(ul, ol, dir, menu) menu,
 :matches(ul, ol, dir, menu) :matches(ul, ol, dir, menu) dir {
@@ -342,7 +348,7 @@ li {
 }
 
 /* forms */
-/* From https://drafts.csswg.org/css-ui-3/#default-style-sheet */
+/* From https://drafts.csswg.org/css-ui-3/#default-style-sheet 
 form {
   display: block;
 }
@@ -506,16 +512,63 @@ br {
 }
 
 img, img_generated {
-  display: -dompdf-image;
+  display: -dompdf-image !important;
 }
 
 dompdf_generated {
   display: inline;
 }
 
-/* hidden elements */
+/* hidden elements 
 area, base, basefont, head, meta, script, style, title,
 noembed, param {
   display: none;
   -dompdf-keep: yes;
+} */
+
+
+
+
+.text {
+	text-align: center;
 }
+.ttu { 
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.2em;
+ }
+
+.printer-ticket {
+	display: table !important;
+	width: 100%;
+	max-width: 400px;
+	font-weight: light;
+	line-height: 1.3em;
+	padding: 5px;
+	font-family: Helvetica, sans-serif !important;
+	font-size: 12px; 
+	
+	
+	
+	}
+	
+	th { 
+		font-weight: inherit;
+		padding:5px;
+		text-align: center;
+		border-bottom: 1px dashed #BCBCBC;
+	}
+
+	
+
+	
+	
+		
+	.cor{
+		color:#BCBCBC;
+	}
+	
+	
+	.title { font-size: 1.5em;  }
+	
+	

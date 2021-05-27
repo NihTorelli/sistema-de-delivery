@@ -32,10 +32,10 @@ $estado = $dados[0]['estado'];
 $cep = $dados[0]['cep'];
  ?>
 
-
 <link rel="stylesheet" type="text/css" href="comprovante.css">
 <link rel="stylesheet" type="text/css" href="../../css/style.css">
 <link rel="stylesheet" type="text/css" href="../../css/fonts.css">
+
 
 
 <table class="printer-ticket">
@@ -85,20 +85,26 @@ $cep = $dados[0]['cep'];
               $total_item = $valor * $quantidade;
               
 
-              $sub_tot = $sub_tot + $total_item;
-              $sub_total = $sub_tot;
+              @$sub_tot = @$sub_tot + @$total_item;
+              @$sub_total = @$sub_tot;
 
-              $total = $sub_total + $taxa_entrega;
+              @$total = @$sub_total + @$taxa_entrega;
 
-              $sub_total = number_format( $sub_total , 2, ',', '.');
-              $total_item = number_format( $total_item , 2, ',', '.');
-              $total = number_format( $total , 2, ',', '.');
+              @$sub_total = number_format( @$sub_total , 2, ',', '.');
+              @$total_item = number_format( @$total_item , 2, ',', '.');
+              @$total = number_format( @$total , 2, ',', '.');
 		 ?>
 		
 		<tr>
 			<td><?php echo $nome_produto ?></td>
 			<td align="center"><?php echo $quantidade ?></td>
 			<td align="right">R$ <?php echo $total_item ?></td>
+			
+		</tr>
+
+		<tr>
+			<td colspan="2">OBS:</td>
+			<td align="right"><?php echo $obs ?></td>
 		</tr>
 
 	<?php } ?>
@@ -108,7 +114,7 @@ $cep = $dados[0]['cep'];
 
 		<tr>
 			<td colspan="3" class="cor">
-				----------------------------------------------------------------------------------
+				-------------------------------------------------------------------------
 			</td>
 		</tr>
 
@@ -138,8 +144,8 @@ $cep = $dados[0]['cep'];
 		</tr>
 
 		<tr>
-			<td colspan="3" class="cor">
-				----------------------------------------------------------------------------------
+		<td colspan="3" class="cor">
+				-------------------------------------------------------------------------
 			</td>
 		</tr>
 
@@ -151,8 +157,8 @@ $cep = $dados[0]['cep'];
 		</tr>
 
 		<tr>
-			<td colspan="3" class="cor">
-				----------------------------------------------------------------------------------
+		<td colspan="3" class="cor">
+				-------------------------------------------------------------------------
 			</td>
 		</tr>
 
@@ -160,19 +166,15 @@ $cep = $dados[0]['cep'];
 			<td colspan="2">Forma de Pagamento</td>
 			<td align="right"><?php echo $tipo_pgto ?></td>
 		</tr>
+		
 		<tr>
-			<td colspan="2">Pago</td>
-			<td align="right"><?php echo $pago ?></td>
-		</tr>
-
-		<tr>
-			<td colspan="3" class="cor">
-				----------------------------------------------------------------------------------
+		<td colspan="3" class="cor">
+				-------------------------------------------------------------------------
 			</td>
 		</tr>
 
 		<tr>
-			<td align="center" colspan="3">Endereço Entrega - <?php echo $rua .' Nº '. $numero .' Bairro '. $bairro;  ?></td>
+			<td align="center" colspan="3">Endereço entrega: - <?php echo $rua .' Nº '. $numero .' Bairro: '. $bairro;  ?></td>
 
 			
 			
@@ -186,26 +188,26 @@ $cep = $dados[0]['cep'];
 		
 
 		<tr>
-			<td colspan="3" class="cor">
-				----------------------------------------------------------------------------------
+		<td colspan="3" class="cor">
+				-------------------------------------------------------------------------
 			</td>
 		</tr>
 
 		<tr>
-			<td colspan="3" align="center">
-				<b>Pedido: <?php echo $id ?></b>
+			<td colspan="3" align="center" class="ttu">
+				<strong>Pedido: <?php echo $id ?></strong>
 			</td>
 		</tr>
 
 		<tr>
-			<td colspan="3" class="cor">
-				----------------------------------------------------------------------------------
+		<td colspan="3" class="cor">
+				-------------------------------------------------------------------------
 			</td>
 		</tr>
 		
 		<tr>
 			<td colspan="3" align="center">
-				www.hugocursos.com.br
+				www.deliverytorelli.com.br
 			</td>
 		</tr>
 	</tfoot>
