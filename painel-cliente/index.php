@@ -201,7 +201,7 @@ if(@$_GET['acao'] == $item1){
 
           <li class="nav-item">
             <a href="index.php?acao=<?php echo $item3 ?>" class="nav-link <?php echo $item3ativo ?>">
-              <i class="nav-icon fas fa-th-list"></i>
+              <i class="nav-icon fas fa-id-card"></i>
               <p>
                 Cartões
                 

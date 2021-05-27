@@ -109,14 +109,21 @@ for ($i=0; $i < count($dados); $i++) {
 }
 
 
+//TRAZER O TOTAL DE CARTOES QUE O CLIENTE TEM
+$res = $pdo->query("SELECT * from clientes where cpf = '$cpf_cliente'");
+$dados = $res->fetchAll(PDO::FETCH_ASSOC);
+$cartoes = $dados[0]['cartao'];
+$cartoes = $cartoes + 1;
+
 
 //ATUALIZAR OS DADOS DE ENDEREÇO DO CLIENTE
-$res = $pdo->prepare("UPDATE clientes SET rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade where cpf = '$cpf_cliente'");
+$res = $pdo->prepare("UPDATE clientes SET rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade, cartao = :cartao where cpf = '$cpf_cliente'");
 
 $res->bindValue(":rua", $rua);
 $res->bindValue(":numero", $numero);
 $res->bindValue(":bairro", $bairro);
 $res->bindValue(":cidade", $cidade);
+$res->bindValue(":cartao", $cartoes);
 
 $res->execute();
 
