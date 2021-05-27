@@ -18,7 +18,16 @@ include_once("conexao.php");
 
 
 
-         <?php 
+         <?php
+
+          //DEFINIR NUMERO DE ITENS POR PÁGINA
+          $itens_por_pagina = $itens_por_pagina_produtos;
+
+          //BUSCAR A PÁGINA ATUAL
+          $pagina = intval(@$_GET["pagina"]);
+          $limite = $pagina * $itens_por_pagina;
+
+
           $res = $pdo->query("SELECT * from produtos order by vendas desc");
           $dados = $res->fetchAll(PDO::FETCH_ASSOC);
           for ($i=0; $i < count($dados); $i++) { 
@@ -39,6 +48,14 @@ include_once("conexao.php");
             //$valor_sem_desconto = number_format( $valor_sem_desconto , 2, ',', '.');
             $valor = number_format( $valor , 2, ',', '.');
 
+
+            //BUSCAR TODOS OS PRODUTOS PARA DEFINIR O TOTAL PARA DIVIDIR POR PÁGINAS
+            $res_p = $pdo->query("SELECT * FROM produtos");
+            $dados_p = $res->fetchAll(PDO::FETCH_ASSOC);
+            $num_total = count($dados_p);
+
+            //DEFINIR NUMERO DE PÁGINAS
+            $num_paginas = ceil($num_total/$itens_por_pagina);
             ?>
 
 
